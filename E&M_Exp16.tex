@@ -1,0 +1,183 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 16 \\ Electromagnetic Induction \\ PHYS 216} % Title
+
+\author{James \textsc{Hartwick}\\Partners: Arianna, Riley} % Author name
+
+\date{Nov 6, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & Oct 30 and Nov 6, 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+% SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+To measure the flux density of a magnetic field using a Rotating Coil Magnetometer.
+\section{Theory}
+\subsection{Faraday's Law of Electromagnetic Induction}
+When a coil is driven by a motor to rotate within the field of a Helmholtz Coil arrangement (As shown in the Diagram below) the magnetic induction it experiences induces an e.m.f. within the coil. The sinusoidal voltage amplitude of this e.m.f. can be expressed as:\\
+$E_p=2\pi\nu BAn$ Equation 16.6\\
+
+Where $E_p$ is the the sinusoidal voltage amplitude, $\nu$ is the frequency at which the coil rotates, A is the area of the coil, and n is the number of turns on the coil. This leads to a method in which B can be be derived by measurement of $E_p$, $\nu$, A, and n. A and n are given properties of the coil. $E_p$ can be measured as the peak-to-peak amplitude given by an oscilloscope, and $\nu$ is can be derived as the inverse of the waveforms period (also given by the oscilloscope.)\\
+
+\subsection{Magnetic Fields in a Helmholtz Coil}
+This arrangement can be tested by using a Helmholtz Coil with known magnetic field values. A Helmholtz Coil consists of two identical coils separated vertically by a distance equal to their radius. When the same current runs through both of the coils the resulting magnetic field is constant in the centre. The magnetic induction of this arrangement can be expressed as:\\
+
+$B=\frac{8\mu_0 NI}{(5\sqrt{5})R}$ Equation 16.11\\
+
+Where N is the number of turns about each coil, I is the current passed through each coil, R is the radius of the coils, and $\mu_0$ is the permeability of free space.\\
+
+\subsection{Rotating Coil Magnetometer}
+Consider a rotating coil magnetometer such that its size allows it to be within the constant flux region of the Helmholtz Coil. If the rotation axis of the magnetometer is along the North-South axis of the earth's B field, then the size of the e.m.f. induced within the coil is proportional to the sum of the Helmholtz magnetic flux and the vertical component of the earth's magnetic flux.
+\section{Apparatus}
+\begin{tabular}{ll}
+Rotating coil magnetometer assembly\\
+Two 1-Ampere direct current power supplies\\
+Frequency Generator\\
+Ammeter\\
+Oscilloscope\\
+Goniometer\\
+Leads\\
+
+\end{tabular}
+
+\section{Diagram}
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\section{Procedure}
+The provided Rotating Coil Magnetometer had three pairs of terminals. The one labeled M provided voltage to the motor. Thus varying the voltage through these terminals provided a means to change frequency of the coils rotation. The M terminals were connected to a variable power supply.\\
+
+Next the set of terminals labels R connect to the rotating coil wiring. These terminals were connected to the A/D card so the computer could take measurements from the rotating coil.\\
+
+The third pair of terminals was labeled H, and it connected to the Helmholtz Coils. A second power supply was connected to these terminals to provide current through the Helmholtz Coils. The power supply used had a built in ammeter so current measurements could be taken. The power supply was set to provide 2 Amps to the Helmholtz Coils.\\
+
+Next the Helmholtz Coil Assembly was rotated such that the Rotating Coil's axis of rotation was along the North-South direction of the earths magnetic field.\\
+
+On the computer the data acquisition program (Logger Pro) was setup to have an experiment Length of 0.15s and an automatic sampling speed. These settings were changed as necessary to match the measured waveform.\\
+
+Power was then adjusted to the motor until the Coil began rotating. Using the Single Sweep mode a trace of the waveform was aquired and the period and amplitude $E_p$ were derived from the waveform. The frequency of rotation $\nu$ was then calculated as the inverse fo the period.\\
+
+Once this was done the current was turned off to the Helmholtz Coils, and the connections to the H terminals were swapped. The same current and frequency as before was then applied to acquire a second value for $E_p$ from which the average of the two was calculated. This process was then repeated for five different frequencies. The resulting averages for $E_p$ was then graphed vs the corresponding frequency $\nu$. The Slope of this graph was then used to determine the value of the magnetic field using Equation 16.6. This result was then compared to the theoretical value given by Equation 16.11.\\
+
+\ 
+\ 
+\section{Experimental Data}
+\subsection{Rotating Coil}
+Number of turns: 900\\
+Radius: $(0.0475\pm0.00005)$m\\
+Area ($\pi R^2)$: $(7.09*10^{-3}\pm1.05*10^{-5}) m^2$
+\subsection{Helmholtz Coil}
+Number of turns: 50\\
+Radius: $(0.1475\pm0.00005)$m\\
+Current: $(2\pm0.005)$ Amps\\
+\section{Experimental Analysis}
+\subsection{Calculating experimental B value}
+From equation 16.6 we have:
+$B=\frac{E_p}{2\pi\nu An}=\frac{0.02317}{2\pi(900)(7.09*10^{-3})}= 577.9\mu T$\\
+
+Uncertainties:\\
+$\sqrt{(0.009486)^2+(0.02)^2+(0.001489)^2}=0.0222 \implies B=(577.9\pm12.8)\mu T$
+\subsection{Calculating theoretical B value}
+Using equation 16.11\\
+$B=\frac{8\mu_0 NI}{(5\sqrt{5})R}=\frac{8\mu_0(50)(2amps)}{(5\sqrt{5})(0.1475m)}=609.61\mu T$\\
+
+Uncertainties:\\
+$\sqrt{(0.0025)^2+(0.00295)^2}=0.00417 \implies B=(609.61\pm2.54)\mu T$
+\subsection{Consistency Check}
+609.61-577.9=31.71\\
+$31.71 >(12.8+2.54)=15.34 \therefore inconsistent$
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+
+\ 
+
+\ 
+
+\section{Discussion}
+The experimental value for B was determined to be marginally inconsistent. The uncertainties used accounted for errors in physical measurement of radii, and current. The uncertainty in the slope of the Graph was used to account for error in $\frac{E_p}{\mu}$. And finally the standard error of 2\% from LoggerPro. Unaccounted for errors include any local source to the B field, as well as error in alignment of the rotating coil along the earths North-South magnetic field. It is therefore possible that the apparatus was not perfectly aligned to the local B field which could have affected results.
+\subsection{Graph}
+Values of $E_p$ were graphed against the corresponding $\mu$ value. The slope of this was used to produce a singular value for $\frac{E_p}{\mu}$ which was then used with equation 16.6 to determine the experimental value of B.
+\section{Conclusions}
+$B_{(Experimental)}$ was determined to be $(577.9\pm12.8)\mu T$ which is inconsistent with the theoretical value of $(609.61\pm2.54)\mu T$
+\end{document}
+
+
+

@@ -1,0 +1,214 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 19 \\ The Field of Permanent Magnets \\ PHYS 216} % Title
+
+\author{James \textsc{Hartwick}\\Partners: Arianna, Riley} % Author name
+
+\date{Oct 23, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & Oct (16, 23), 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+% SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+To examine the field of permanent magnets and explore some aspects of geomegnetic surveying.
+
+%\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+
+%\subsection{Definitions}
+%\label{definitions}
+%\begin{description}
+%\item[Stoichiometry]
+%The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+%\item[Atomic mass]
+%The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+%\end{description} 
+%----------------------------------------------------------------------------------------
+% SECTION 2
+%----------------------------------------------------------------------------------------
+
+
+\section{Theory}
+For far field approximations of the magnitude of a magnetic field the following equations may be used.\\
+
+$B_x=\frac{\mu_0P_m(x^2-\frac{y^2}{2})}{2\pi(x^2+y^2)^{5/2}}$ Equation 12\\
+
+
+$B_y=\frac{3\mu_0P_mxy}{4\pi(x^2+y^2)^{5/2}}$ Equation 13\\
+
+Where $B_{x,y}$ represent the magnitude of the magnetic field, $\mu_0$ is the permeability of free space, (x,y) represent the distance to the field source, and $p_m$ is the magnetic dipole moment of the magnet. The equations lead to an easy way in which a device may be constructed to measure the magnetic field. Two probe elements are arranged orthogonally to achieve this. The resulting measurements can then be used to find $P_m$.
+\section{Apparatus}
+\begin{tabular}{ll}
+Two-element Hall probe\\
+A/D interface card\\
+Mapping Software\\
+Personal Computer\\
+Calibration Chamber\\
+Grid Paper and Various Magnets\\
+\end{tabular}
+
+\section{Diagram}
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\
+
+\
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\
+
+\section{Procedure}
+\subsection{Determination of Magnetic Dipole Moment}
+The apparatus was first assembled as shown in Fig. 19.3 of the lab manual. Before placing the magnets in the experimental area the probe was calibrated and local field corrections were made.\\
+
+The calibration of the probe was done by first opening the B-Field program. The program was then setup by the following.\\
+
+Menu - Experiment Set-Up - (re)Select Exp - 2D Dipole Map\\
+
+To calibrate the probe the following was used.\\
+
+Menu - Experiment Set-Up - InterFace Calibration \& A/D SetUp - (re)Calibrate\\
+
+Next, with the use of a calibration chamber, the on screen instructions were followed with the addition of selecting the option to null out the Earth's magnetic field.\\
+
+Next the local field was corrected by clicking the Field Correction box on the tool bar.\\
+
+After the calibration and corrections were made data was collected by first placing the magnet in the centre of the grid ensuring that North was pointing towards the right. The probe was then held vertically in such a way that the orientation of the sensors matched the ones indicated within the B-Field Program. Data was then collected by matching the B-Field program to the location of the probe so that a complete mapping of the magnetic field pattern could be discerned. Once complete the data was saved and printed for later use.
+
+\subsection{Magnetic Surveying}
+To map the magnetic field of the magnet within the black box provided the B-Field program was first setup by the following.\\
+
+Menu - Experiment Set-Up - (re)Select Exp - Magnetic Field Mapping\\
+
+The black box was then placed on the grid so that it matched up with the location displayed within the B-Field program. The probe was then recalibrate in the same manner described previously. The probe was then used to take reading along the edge of the box outwards completing 3 or 4 complete rows \& columns in each possible direction outwards from the box on the grid paper. The results were then printed in both scaled and unscaled forms.
+
+\section{Experimental Data}
+\subsection{Determination of Magnetic Dipole Moment}
+See attached Table 1.
+\subsection{Magnetic Surveying}
+See attached Table 2.
+\section{Experimental Analysis}
+\subsection{Determination of Magnetic Dipole Moment}
+Measured value of $P_m$: 0.656 A$m^2$\\
+Experimental values of $P_m$ were determined to be:\\\\
+By Equation 12: 0.657$\pm$0.202 A$m^2$\\
+Consistancy check: $\|0.656-0.657\|$$\le$ 0.202 $\therefore$ Consistent\\\\
+By Equation 13: 0.718$\pm$0.204 A$m^2$\\
+Consistancy check: $\|0.656-0.718\|$$\le$ 0.204 $\therefore$ Consistent\\
+
+Experimental values were determined by taking the mean of all measurements with both $B_x\ \&\ B_y$ values greater than 0.0005. Is was observed that the results for $P_m$ deviated wildly for $B_x\ \&\ B_y$ values less than this number.\\
+
+Uncertainties were calculated using the standard deviation of the mean for the results of each equation.
+
+\subsection{Magnetic Surveying}
+The location of the Magnet was estimated to be at (95,90).\\
+The experimental values of $P_m$ were determined to be:\\
+By Equation 12: 0.173$\pm$0.097 A$m^2$\\
+By Equation 13: 0.288$\pm$0.121 A$m^2$
+\section{Discussion}
+The experimental values for $P_m$ of the magnet were consistent with the theoretical/measured value.
+Uncertainties were derived by the standard deviation of the mean across all relevant data points. Points with low measured values for $B_x\ or\ B_y$ were omitted as they provided results that deviated wildly from the rest of the data set. This is a consequence of the equations being used where, at small B values, small fluctuations cause large changes to the value of $P_m$.\\\\
+A large standard deviation of the mean was determined for both parts 1 and 2. The equations used require that the probe be perfectly in line with the x and y axis of the grid paper. However, the probe is small it is difficult to align perfectly. This could help account for the large standard deviation of the mean. To improve upon this experiment the probe could be redesigned so that is is easier to align it to the along the the same axis of the graph paper. One solution to this would be to attach retractable arms onto the probe that correspond to x and y which could be folded down and matched up with the grid paper. This would result is better accuracy and much more consistently aligned measurements.
+
+\section{Conclusions}
+
+All results for $P_m$ were deemed to be consistent.\\
+
+Part 1:\\
+The experimental values of $P_m$ were determined to be:\\
+By Equation 12: 0.657$\pm$0.202 A$m^2$, consistent with the measured value.\\
+By Equation 13: 0.718$\pm$0.204 A$m^2$, consistent with the measured value.\\\\
+Part 2:\\
+The experimental values of $P_m$ were determined to be:\\
+By Equation 12: 0.173$\pm$0.097 A$m^2$\\
+By Equation 13: 0.288$\pm$0.121 A$m^2$
+\end{document}
+
+

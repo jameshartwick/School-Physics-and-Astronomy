@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 1 \\ An Introduction to IRAF and CCD Preprocessing \\ ASTR 329} % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Sept 28, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+
+\section{Objective}
+To demonstrate the process of CCD data reduction and preprocessing for scientific imagery.
+\section{Introduction}
+The reduction of CCD (Charged Coupled Devices) data may be performed using the IRAF (Image Reduction and Analysis Facility) software. IRAF contains may libraries for image reduction analysis and manipulation with an emphasis on Astronomy.\\
+
+CCDs are a widely used photographic device which convert incident photons into counts via the measurement of accumulated electric charge. The challenge with working with CCDs comes from the inherent noise from thermal effects and other sources such as cosmic rays. The removal of these noise sources is vital for gathering useful scientific data.\\
+
+The actual reduction process may be summarized as follows. First the instrumental noise must be removed. This is accomplished by use of an over-scanned region on the CCD known as the “floating bias.” Each image taken will have it's own intrinsic floating-bias that needs to be corrected for. This floating bias accounts for any. Further instrumental signal noise can be corrected for by taking an image with zero exposure time. This is called the bias frame. It can be thought of as a normalization or zero point for the CCD. Finally a flat field image is taken to account for any other common distortion effects or unwanted objects (Like dust) in the optics of the telescope. The scientific image is divided by the flat field to account for the gain and to remove systemic error in the scientific image. Further sources of error can arise from dark current, cosmic rays, and bad pixels/rows/columns. The effects and corrections for these sources will be discussed below.
+\section{Procedure}
+The $display$ function within IRAF was used to display the science, flat, and bias frames. Next the over scanned floating bias pixels were identified using $imhead$ and the dimensions of the image [325:525]. The floating bias region was identified as [1:325,512:525].\\
+
+Next, the IRAF function $imstat$ was used to determin the mean of the floating bias region. The minimum value in this region was zero, so clearly there were bad pixels which needed to be accounted for. $epar\ imstat$ was used to modify the parameters of $imstat$. $nclip,\ lsigma,$ and $usigma$ were set to 5, 2, 2 respectively. This iteratively excludes pixels outside the set range of standard deviations when performing $imstat$. The resulting mean was 457.8 with a standard devaition of 2.39.\\
+
+Next $imarith$ was used to subtract this mean value from the science, flat field, and bias frames to provide a working zero point. Next the images were cropped using imcopy to exclude the floating bias region and any other bad areas. The bias frame was then subtracted from the science and flat field frames using $imstat$. The science frame was then flat field corrected by dividing it by the flat field frame again using $imstat$. Finally the science frame was re-normalized by multiplying it by the mean of the flat field frame.
+
+\section{Questions}
+\subsection{Reduction Procedures}
+ The bias only needs a floating-bias correction and trimming because it contains no data other than the bias itself. Subtracting the bias like in the other procedures would merely result in nothing being left to work with. The flat field is not applicable to the bias frame either because the flat field corrects for errors in the exposure. The bias frame has zero exposure time so these errors cannot effect it.\\
+
+The flat field requires the first three steps of the procedure because it is prone to error from the bias/floating bias. \\
+
+The science frame needs all of the reduction procedures because it is effected by all the errors for which they correct. This is the main frame of interest, but it is only useful after the previous frames have been processed first. The floating bias and bias are subtracted from it because they provide a mean correction value for all pixels that corrects errors intrinsic to the CCD's DU reporting. The flat field then corrects the errors which depends on exposure length and are unique to each pixel. Subtracting the flat field could over or under correct some regions. So division is used to make these corrections.\\
+
+\subsection{Why is the Data Frame Renormalized}
+Both the flat field and the science frame have similar mean pixel
+values. So dividing the flat field out reduces the mean pixel value of the
+data to be approximately one. This leaves the pixel values of the data frame relatively to each other, but the values no longer reflect the number of photons detected by the CCD in absolute terms. Thus renormalization can be done to so the pixel values once again represent the observed photons rather that something arbitrary.\\
+
+\subsection{Reducing the Raw Dark Frame}
+A dark frame would be processed the same as the flat field frame. The bias and floating-bias must be subtracted from it. After this is done the new dark frame would be subtracted from the data frame.\\
+
+\subsection{``Cosmetic'' Fixups}
+The removal of bad rows and columns can be done by first determining the defective pixels and replacing it with the value of a nearby pixel or the mean of the surrounding pixels to fill problem areas. To correct for cosmic ray spikes many bias frames and be combined together so the mean effect of the spike is no longer present in the resulting bias. A similar method can be used for the data frames, but often this is a luxury that is not available due to limited observing time. Luckily these spikes tend to completely saturate individual pixels only. Thus is can be fairly simple to write a script that replaces pixels matching this criteria with the mean value of surrounding pixels.\\
+
+\subsection{Minimizing the Effects of Noise}
+Taking many bias frames from which a cumulative mean bias frame is generated help reduce the effects of cosmic rays as well as reduce uncertainties from simple poisson statistics. The floating-bias can also be monitored while observing to account for any significant change which may occur. If this happens new biases can be taken. Multiple dark frames taken throughout the observation timeframe can also help to verify whether or not they will be needed. If the CCD is sufficiently cooled the dark current may be ignored, but it must be monitored nonetheless. All of these methods can be described as simply taking all data in similar conditions. This is important for all frames so that appropriate corrections can be done, and you are not left with unusable data afterwards.\\
+
+\subsection{Fringing}
+Fringing is usually caused by narrow night-sky emission lines that can produce brightness patterns in the CCD due to reflection and interference within the thin layers of substrate in the device. This creates a path length difference within the wavefront of incoming monochromatic light which results in the observed fringing patterns. This can be corrected by using multiple dark-sky flats and then combining them together slightly displaced from each other using a median filter. This will result in the stars being removed leaving just the fringe pattern which can then be subtracted from the data frames.
+. 
+\end{document}

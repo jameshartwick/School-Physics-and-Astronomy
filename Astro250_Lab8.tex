@@ -1,0 +1,85 @@
+
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 8 \\ Size of the Galaxy \\ ASTR 250\\ \ \\ } % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Date Performed: Nov 26, 2014\\ \ } % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+\section{Objective}
+The distance to the centre of the Milky Way was determined through the analysis of globular clusters, using cluster M3 for “calibration”. The distance to M3 was determined through the measurement of apparent magnitude of three Cepheid Variable stars.\\
+\section{Introduction}
+Harlow Shapely is considered to be one of the most important astronomers of the twentieth century. His work led to the mapping of the Milky Way galaxy, determining values for the size of the galaxy and the distance of the Sun from the centre that are not far from modern values. Shapely’s discovery of the Sun’s position in the galaxy is compared to the discovery of the Earth’s position in the solar system. He was able to map the Milky Way through the observation and measurement of globular clusters. Using one of the most advanced telescopes of the time, the 60’’ Mount Wilson Observatory telescope, Shapely was able to observe nearby globular clusters, objects not well understood at the time. Within several clusters, Shapely observed Cepheid Variable stars and was able to determine the distance to the clusters using a relationship developed years earlier by astronomer Henrietta Swan Leavitt. Cepheid Variables are what’s known as “standard candles” in the astronomical world. This is due to the relationship discovered by Leavitt that the period of the variable star increases with luminosity. By measuring the period of the variable stars, the luminosity (an intrinsic property) and the apparent magnitude through observation Shapely was able to determine the distance to the clusters using the distance modulus formula equation 1.0, a variation to be used within the lab is also shown:\\
+
+$m-M=5logd-5$ Equation 1.0\\
+
+$\bar R=R_{M3}\theta_{M3}\frac{\theta_1+\theta_2+...+\theta_n}{\theta_1^2+\theta_2^2+...+\theta_n^2}$ Equation 1.1\\
+
+After plotting the positions of the clusters he observed Shapely was able to create a map of the Milky Way. The clusters were spherically distributed in space with the centre laying in the constellation Sagittarius, thus Shapely reasoned Sagittarius must also harbour the centre of the galaxy.\\
+
+Today astronomers believe the super-massive black hole to which the entire galaxy is gravitationally bound lies in the constellation Sagittarius and is known as the Sag A*. The distance of the Sun to the centre of the galaxy was discovered by Shapely to be about 15kpc, the modern accepted value if about 8kpc. The main reason for Shapely’s deviation from the true value was his inability to account for interstellar dust extinction. Shapely is also well known for the Shapely-Curtis debate, in which he wrongly theorized that the galaxy itself was the entire universe and that cloud-like “nebulae” lay within the Milky Way. Curtis argued that those “nebulae” lay outside the Milky Way and could perhaps be island universes within themselves. The answer to the debate did not come until Edwin Hubble’s discovery of Cepheid Variable Stars in the Andromeda Galaxy in the 1923. The distance to the variable star in Andromeda was much greater than the determined size of the Milky Way at the time and therefore could not lie within the Galaxy$^1$.\\
+
+Globular Clusters harbour some of the oldest stars in the Universe and are not well understood. Clusters vary in size, but usually contain roughly 100,000 stars, gravitationally bound in a clump. The clusters are of interest to astronomers as they do not lie in the plane of the Milky Way and instead orbit the halo. The clusters contain metal poor stars further alluding the old age of the stars within. Theories surrounding the appearance of globular clusters around large galaxies like the Milky Way, propose that the GC are gravitationally captured during the passing of a small dwarf satellite galaxy as it travels near the larger galaxy. Thus the theory also links the formation of dwarf galaxies and globular clusters to the same epoch of the Universe$^2$.
+\section{Equipment}
+Images of the globular cluster M3 taken by Dan Caton of Appalachian State University.\\
+
+Images of each of the ten globular clusters in Sagittarius taken from the Digital Sky Survey.
+
+\section{Procedure}
+Identify the four RR Lyrae variable stars using Figure 8.23 and the appropriate task in IRAF, to record the positions of the stars in the image.\\
+
+Perform aperture photometry on the stars using the task in IRAF to find the magnitudes of the stars and observation time.\\
+
+Create light curves for the stars using the appropriate task in IRAF and the information provided in the file created in the previous step. Print all four.\\
+
+Determine the apparent magnitude of the stars by finding the mean magnitude of the light curves. Use equation 1.0 to find the distance to M3.\\
+
+Find the coordinates for the centre of the galaxy by plotting every fifth cluster on the sheets provided.
+Using the appropriate program in IRAF measure the angular diameter of M3 and ten other globular clusters, with uncertainty.\\
+
+Use these values, distance to M3 found in the previous steps and equation 1.1 to determine the distance to the centre of the galaxy.\\
+
+Determine the mass of the galaxy using the information provided in reference three and the appropriate circular motion equations.
+\section{Data and Calculations}
+See attached page and Graphs.
+\section{Discussion}
+The distance to the centre of the galaxy was determined through a method similar to the one used by Harlow Shapely in the early 1900’s. The distance to globular clusters was determined in order to calculate the distance to the centre of the galaxy, based on the assumption that the clusters are most abundant in the centre of the galaxy.\\
+
+The globular cluster M3 was used as along with the angular diameters of ten other globular clusters to determine the distance to the centre using equation 1.1. The angular diameters of the globular clusters were measured in the same fashion for each to ensure consistency and the limitation of systematic errors. The distance to M3 was determined through the measurement of the apparent magnitude of four Cepheid Variable RR Lyrae stars using IRAF and generated light curves. The image used resembled the finder chart given in reference three. The light curve of variable star number two, Figure 2.0 was chosen to be left out of the calculation for the distance to M3 as it didn’t exhibit the same shape in its light curve as the other stars. This led to the conclusion that the star in Figure 2.0 is another type of variable star and therefore not included under the assumption of absolute magnitude being 0.7$\pm$.1.\\
+
+The distance to M3 was found to be $(9477.8\pm209.2)$pc. This value was then used in equation 1.1 to determine a distance to the centre of the galaxy of $(9989\pm1968)$pc, consistent with the known value of 8600 pc. The found distance to centre of the galaxy along with the orbital speed of the Sun given in reference three were used to determine the period of the orbit of the Sun and the mass of the galaxy contained within the Sun’s orbit. The period of orbit was found to be $(2.71\pm0.367)10^8$ years, the mass of the galaxy was found to be $(1.09\pm0.2605)10^{11}$ solar masses.\\
+
+The neglect of measuring distant and hence small clusters would have a minimal effect on the overall result as they would not influence the average distance. If a large, close cluster was included in the sample the subsequently calculated distance to the centre of the galaxy would decrease greatly. The assumption that globular clusters are all the same physical size not being factual would introduce random errors into the calculations and subsequent results. The use of only one globular cluster for calibration would influence the calculation of distance directly, so that if M3 was smaller the distance would be smaller.\\
+
+Sources of error in the lab are those linked to the assumption that the physical size of all the clusters is same, the size of M3 which would lead to random errors. The other assumption made is that there is not a substantial extinction of light due to interstellar dust. This assumption would lead to systematic errors for the measurement of the clusters near the galactic centre as a factor compensating for extinction was not included in equation 1.0. The correction for these assumptions and the subsequent alterations to equations 1.0 and 1.1 could be applied in the future to provide a more accurate measure of the distance to the galactic centre.
+\section{Conclusion}
+The distance to the centre of the Milky Way was determined to be $(9989\pm1968)$pc consistent with the theoretical value. This was done through the measurement of the distance to the globular cluster M3 using Cepheid RR Lyrae Variable stars. The mass of the galaxy and orbital period of the Sun were also determined to be  $(1.09\pm0.2605)10^{11}$ solar masses and $(2.71\pm0.367)10^8$ years respectively.
+\section{References}
+1. Unknown. http://cosmology.carnegiescience.edu/timeline/1920. Carnegie Institute for Science, OR: last accessed unknown.\\
+2. Bellazzini, M. Highlights of Astronomy 2009, 20.\\
+3. Department of Physics and Astronomy, Astronomy 250 Lab Manual, pp. 71 to 83. (University of Victoria: Victoria, BC). July 2011.
+\end{document}

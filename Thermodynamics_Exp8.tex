@@ -1,0 +1,355 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Experiment 8 \\ Thermoelectric Effects \\ PHYS 217} % Title
+
+\author{James \textsc{Hartwick}\\ V00767675} % Author name
+
+
+\date{July 23, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & July 22, 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+% SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+To study the Seebeck and Peltier effects with the use of a thermoelectric module.
+
+%\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+
+%\subsection{Definitions}
+%\label{definitions}
+%\begin{description}
+%\item[Stoichiometry]
+%The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+%\item[Atomic mass]
+%The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+%\end{description} 
+%----------------------------------------------------------------------------------------
+% SECTION 2
+%----------------------------------------------------------------------------------------
+
+
+\section{Theory}
+If a temperature gradient is applied across a thermoelectric material it will induce an electric potential due to the electrons at the warmer end having more kinetic energy than the ones at the colder end. This is know as the Seebeck Effect. The induced Electromotive force is proportional to the temperature difference between the two ends by some constant factor. This constant is referred to as the Seebeck coefficient of the conductor and can be expressed as:\\\\
+$\Delta V=S_1\Delta T$\\\\
+Next, the Peltier Effect, which is similar to the Seebeck Effect. But differs in that an external potential is introduced to drive the electrons from one end of the material to the other. As the electrons travel through the material they transfer thermal energy from one end to the other just as the Seebeck Effect does.\\ 
+
+When two different thermoelectric materials are joined heat will flow through the connection at a rate proportional to a constant $\pi_{12}$ know as the Peltier coefficient. Based on the direction of the current flowing through the system this junction will either be cooled or heated. This coefficient $\pi_{12}$ can be expressed in relation to the Seebeck coefficient and temperature at the junction as follows:\\\\
+$H=\frac{dQ}{dt}=\pi_{12}I$\\\\
+or more simply:\\\\
+$\pi_{12}=S_{12}T$\\\\
+A Thermoelectric Module is a device engineered to make use of the Peltier Effect to either generate heat (as a heat pump) when current is applied, or to generate power (electric current) when a heat gradient is induced. When a current is applied the decrease in temperature on the cooler end starts a transfer of heat from the surroundings in the form of electrons with kinetic energy which then release their energy on the hot end. In order for this to function this effect continues the excess heat must be removed with a heat sink. The rate of heat flow through the Thermoelectric Module can be expressed as:\\\\
+$H=S_{12}T_cI_m-\frac{1}{2}I^2_mR_m+\frac{T_c-T_h}{R_{th}}$\\\\
+where H is the heat flow, $T_c$ is the temperature of the cold block in K, $T_h$ is the temperature of the heat sink in K, $I_m$ is the current passing through the module, $R_m$ is the electrical resistance of the module, and $R_{th}$ is the thermal resistance of the module. This last value, thermal resistance, is given by the expression:\\\\
+$R_{th}=\frac{T_c-T_h}{P}$\\\\
+Where is the electrical power used to heat the cold block.\\
+While functioning as a heat pump the coefficient of performance is given by:\\\\
+$C.O.P=\frac{H}{I_mV_m}$\\
+\section{Apparatus}
+\begin{tabular}{ll}
+Powerstat Variable Auto-transformer\\
+PMC Current Limiting Regulated Power Supply\\
+Armaco DC Ammerter\\
+Fluke Digital Multimeter\\
+Control Company Traceable Thermometers\\
+Thermocouple\\
+Thermoelectric Module (Cold block, heating module, heat sink, power supply, heating resistors)\\
+\end{tabular}
+\\\\
+\section{Diagram}
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\section{Procedure}
+\subsection{The Seebeck Effect}
+The Seebeck coefficient is to be determined by finding the slope of the graph of Voltage vs $T_c-T_h$. To collect the data needed a voltmeter must be used to measure the electric potential across the two ends of the module while is is heated by two heating resistors. First ensure that module is in thermal equilibrium (The thermometers monitoring the hot and cold ends should be roughly the same). Next, supply power (Approximately 20 watts) to the heating resistors and incrementally measure the Voltage as the modules temperature increases (roughly once per degree of temperature rise.) Graph the results to determine the Seebeck coefficient.
+\subsection{The Peltier Effect for $T_c<T_h$}
+Supply approximately 2 watts of power to the heating resistors on the cold block and adjust the variac so the the temperature $T_c$ is approximately 1K less than $T_h$. Record these temperature values and be sure to maintain them throughout the rest of the experiment. Now increase the power over the heating resistors in increments of 0.5W up to 7W. For increment adjust the variac to maintain constant $T_c and T_h$ and record $I_{resistor}, V_{resistor}, I_m, V_m$. Use this data to plot H obtained by the power of supplied to the heating resistors as a function of the current $I_m$. Next determine the thermal resistance using the relation:\\\\
+$R_{th}=\frac{T_c-T_h}{P}$\\\\
+Next plot the C.O.P as a function of $I_m$\\\\
+Finally determine the Peltier coefficient.
+
+\section{Experimental Data}
+\subsection{Part A: The Seebeck Effect}
+
+
+\begin{tabular}{llll}
+$(T_c \pm 0.05)^\circ C$ & $(T_h \pm 0.05)^\circ C$ & $(\Delta T \pm 0.1)K $ & $(\Delta V \pm 0.0005)V$\\
+20.0 & 22.0 & 2.0 & 0.035\\
+20.0 & 23.0 & 3.0 & 0.047\\
+20.0 & 24.0 & 4.0 & 0.059\\
+20.0 & 25.5 & 5.5 & 0.073\\
+20.0 & 27.0 & 7.0 & 0.091\\
+20.0 & 28.7 & 8.7 & 0.104\\
+20.0 & 30.0 & 10.0 & 0.116\\
+20.0 & 31.4 & 11.4 & 0.131\\
+20.0 & 32.4 & 12.4 & 0.144\\
+20.0 & 33.3 & 13.3 & 0.158\\
+20.0 & 34.6 & 14.5 & 0.172\\
+20.1 & 36.0 & 15.9 & 0.191\\
+20.1 & 37.0 & 16.9 & 0.202\\
+20.1 & 39.6 & 19.5 & 0.230\\
+20.1 & 40.6 & 20.5 & 0.239\\
+20.1 & 41.6 & 21.5 & 0.249\\
+20.1 & 42.7 & 22.6 & 0.261\\
+20.1 & 43.9 & 23.8 & 0.272\\
+20.1 & 44.7 & 24.5 & 0.280\\
+20.2 & 45.7 & 25.5 & 0.293\\
+20.2 & 46.4 & 26.2 & 0.302\\
+20.2 & 47.1 & 26.9 & 0.312\\
+20.2 & 47.8 & 27.6 & 0.320\\
+20.2 & 49.0 & 28.8 & 0.335\\
+20.2 & 50.0 & 29.8 & 0.346\\
+20.2 & 51.9 & 31.7 & 0.367\\
+20.2 & 54.8 & 34.6 & 0.406\\
+20.2 & 56.8 & 36.6 & 0.419\\
+\end{tabular}\\\\
+Continued:\\
+\begin{tabular}{llll}
+$(T_c \pm 0.05)^\circ C$ & $(T_h \pm 0.05)^\circ C$ & $(\Delta T \pm 0.1)K $ & $(\Delta V \pm 0.0005)V$\\
+20.2 & 57.0 & 36.8 & 0.421\\
+20.2 & 58.1 & 37.9 & 0.432\\
+20.2 & 58.5 & 38.3 & 0.436\\
+20.2 & 58.7 & 38.5 & 0.438\\
+20.3 & 59.4 & 39.1 & 0.446\\
+20.3 & 60.0 & 39.7 & 0.453\\
+20.3 & 60.7 & 40.4 & 0.458\\
+20.3 & 61.1 & 40.8 & 0.462\\
+20.3 & 61.3 & 41.0 & 0.465\\
+20.3 & 61.4 & 41.1 & 0.466\\
+20.3 & 61.5 & 41.2 & 0.467\\
+20.3 & 61.6 & 41.3 & 0.469\\
+20.3 & 61.7 & 41.4 & 0.470\\
+20.3 & 61.9 & 41.6 & 0.469\\
+20.4 & 62.5 & 42.1 & 0.470\\
+20.4 & 62.9 & 42.5 & 0.473\\
+20.4 & 64.0 & 43.6 & 0.481\\
+20.4 & 64.2 & 43.8 & 0.487\\
+20.4 & 64.4 & 44.0 & 0.499\\
+20.4 & 64.6 & 44.2 & 0.502\\
+20.4 & 64.8 & 44.4 & 0.504\\
+20.4 & 65.0 & 44.6 & 0.507\\
+20.4 & 65.2 & 44.8 & 0.509\\
+20.4 & 65.3 & 44.9 & 0.511\\
+20.4 & 65.4 & 45.0 & 0.515\\
+20.4 & 65.3 & 44.9 & 0.516\\
+20.4 & 65.2 & 44.8 & 0.515\\
+20.4 & 65.2 & 44.8 & 0.514\\
+
+
+\end{tabular}
+\\\\
+At Equilibrium:\\
+\begin{tabular}{ll}
+Voltage over heating resistors (V)& $(5.826\pm 0.0005)V$\\
+Current through heating resistors (I) & $(2.9 \pm 0.05)A$\\
+Power supplied to resistors (P=IV) & $(16.89 \pm 0.291)W$\\
+Seebeck coefficient (Obtained from figure 1.0) & $(0.01120 \pm 0.00003059)\frac{V}{K}$\\
+\end{tabular}\\\\
+Thermoelectric Module resistance = $0.21\Omega$\\\\\\\\\\\\\\\\\\
+\subsection{Part B: The Peltier Effect}
+Where:\\
+$V_m$ = Module Voltage (V)\\
+$I_m$ = Module Current (A)\\
+$V_r$ = Heating resistor Voltage (V)\\
+$I_r$ = Heating resistor Current (A)\\
+$P_r$ = Power supplied to heating resistor (W)\\
+$\Delta T = (T_h - T_c) (K)$\\\\
+\begin{tabular}{llllll}
+$(V_m\pm0.005) (V)$ & $(I_m\pm0.05) (A)$ & $(V_r\pm0.005) (V)$ & $(I_r\pm0.05) (A)$ & $(\Delta T\pm0.05) (K)$\\
+0.222 & 0.8 & 2.003 & 1.0 & 1.0\\
+0.298 & 1.0 & 2.250 & 1.15 & 0.9\\
+0.346 & 1.2 & 2.46 & 1.25 & 1.0\\
+0.398 & 1.4 & 2.709 & 1.35 & 1.0\\
+0.425 & 1.5 & 2.916 & 1.4 & 1.0\\
+0.458 & 1.65 & 3.101 & 1.45 & 1.0\\
+0.529 & 1.9 & 3.262 & 1.55 & 1.0\\
+0.598 & 2.15 & 3.402 & 1.65 & 1.0\\
+0.673 & 2.4 & 3.484 & 1.7 & 1.0\\
+0.739 & 2.6 & 3.703 & 1.8 & 1.0\\
+0.820 & 2.9 & 3.790 & 1.85 & 1.0\\\\
+\end{tabular}
+Results:\\\\
+\begin{tabular}{lll}
+$H_{emperical} (W)$ & $H_{theoretical} (W)$ & $C.O.P$\\
+$2.00\pm0.10$ & $2.93\pm0.19$ & $11.26\pm0.94$\\
+$2.59\pm0.111$ & $3.54\pm0.19$ & $8.69\pm0.57$\\
+$3.08\pm0.12$ & $4.15\pm0.19$ & $7.42\pm0.41$\\
+$3.66\pm0.14$ & $4.75\pm0.19$ & $6.57\pm0.31$\\
+$4.08\pm0.15$ & $5.05\pm0.20$ & $6.40\pm0.28$\\
+$4.50\pm0.16$ & $5.49\pm0.20$ & $5.95\pm0.23$\\
+$5.06\pm0.17$ & $6.21\pm0.20$ & $5.03\pm0.17$\\
+$5.61\pm0.17$ & $6.93\pm0.20$ & $4.36\pm0.13$\\
+$5.92\pm0.17$ & $7.63\pm0.20$ & $3.67\pm0.10$\\
+$6.67\pm0.19$ & $8.17\pm0.20$ & $3.47\pm0.09$\\
+$7.01\pm0.19$ & $8.98\pm0.21$ & $2.95\pm0.07$\\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+% SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\subsection{Part A: Determining Thermal Resistance $R_{th}$}
+For parameter values when the system has achieved equilibrium:\\
+$R_{th}= \frac{T_c-T_h}{P}=\frac{\Delta T}{P}=\frac{(44.8\pm0.1)K}{(16.89 \pm 0.291)W}=(2.65\pm0.046)\Omega$
+\subsection{Part B: Sample Calculation for Empirical H Values}
+$H=P_r=I_rV_r=(1.0\pm0.05)A(2.00\pm0.005)V=(2.0\pm0.10)W$
+\subsection{Part B: Sample Calculation for Theoretical H Values}
+$H=S_{12}T_cI_m-\frac{1}{2}I^2_mR_m+\frac{T_c-T_h}{R_{th}}$\\
+$=(0.01120\frac{V}{K})(292.15K)((0.8\pm0.05)(A)-\frac{1}{2}((0.8\pm0.05)(A))^2(0.21\Omega)+\frac{(1.0\pm0.05)K}{(2.65\pm0.046)\Omega})$\\
+$=(2.93\pm0.19)W$
+\subsection{Part B: Determining Coefficient of Performance}
+$C.O.P=\frac{H}{I_mV_m}=\frac{(2.0\pm0.1)W}{(0.8\pm0.05)A(0.222\pm0.005)V}=11.26\pm0.936$
+\subsection{Part B: Determining The Peltier Coeficient}
+$H=\pi_{12}I_m$\\\\
+Or, from the linear term of Fig 2.0\\
+$\pi{12}=3.276\frac{W}{A}$
+%----------------------------------------------------------------------------------------
+% SECTION 4
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+% SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Discussion}
+(1) To determine the Peltier coefficient and it's effect on the system we need to observe the heat flow through the system as it responds to the current through the Thermoelectric Module. If the system is in thermal equilibrium then the heat flow our of the system is equal to the heat flow into the system. This leads to a trivial calculation where we only need the power put into the system to study the Peltier effect.\\
+(2) As current raises, so does heat flow. They appear to be almost linearly related with a very small quadratic component. Both empirical and theoretical results appear to follow similar curves, but the theoretical is consistently larger and appears to have an even smaller quadratic coefficient.\\
+(3) The coefficient of performance (C.O.P) is the ratio of heat exchanged by a heat pump to the electrical power required. The C.O.P is useful for determining the efficiency of a heat pump where the higher it's value is the more efficient the heat pump is at transmitting heat. From this experiment it would appear that the C.O.P decreases as current increases. This decrease (d(C.O.P)/dI) appears to get smaller for larger values of current.
+(4) As discussed above the theoretical and empirical values for H look quite similar but seem to differ by some constant. This would indicate that the constant term $\frac{\Delta T}{R_{th}}$in the theoretical equation may be giving issue. $R_{th}$ is inversely related to the power which could suggest that the power needed to heat the cold block (to induce the Peltier effect) is lower than predicted, or perhaps the value measured for power is incorrect.\\
+Some possible sources of error come from the possibility that our system was not in perfect thermal equilibrium. The thermometers used are only accurate to 0.1K which leaves large uncertainties on whether or not T is constant while taking data. If T is not constant (the system is not in thermal equilibrium) then the whole premise of this experiment is invalid. Thus, either longer observation times are required, or better thermometers would help increase the reliability of results. Longer observation times may not be sufficient as $T_c$ (From the tap water temperature) was not constant. Thus, we want to find an equilibrium state as quickly as possible. Therefore thermometers with increase precision would be the best way to improve this experiment.
+%----------------------------------------------------------------------------------------
+% SECTION 6
+%----------------------------------------------------------------------------------------
+\section{Conclusions}
+The Seebeck coefficient was determined to be:\\
+$S_{12}=0.01120\frac{V}{K}$\\\\
+The Peltier coefficient was determined to be:\\
+$\pi_{12}=3.276\frac{W}{A}$
+\section{Questions}
+\subsection{1}
+From:\\
+$H=S_{12}T_cI_m-\frac{1}{2}I^2_mR_m+\frac{T_c-T_h}{R_{th}}$\\\\
+The first term describes the heat flow across the junction due to the Peltier Effect.\\\\
+The second term describes the power dissipation into the Thermoelectric Module. This induces the flow of heat. It is negative because it describes the the power required $by$ the module to induce the heat flow/Peltier Effect.\\\\
+The third term is simply the power needed to heat the cold block.
+\subsection{2}
+Electrical resistant is related to the voltage drop over a system, and inversely related to the current (dq/dt).\\
+Thermal resistance is proportional to the temperature drop/difference over a system where electrons with high kinetic energy want to move from high to lower energy states. Thus we have a kinetic potential instead of a voltage potential.\\
+Next, the thermal resistance is inversely proportional to the rate of heat conduction which is analygous to the current.
+\section{References}
+1) Unknown. http://www.thermoelectrics.caltech.edu/thermoelectrics/history.html. Caltech Materials Science Research Group, California Institute of Technology: Accessed 2014.
+
+
+\end{document}

@@ -1,0 +1,109 @@
+
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 6 \\ H-R Diagram \\ ASTR 250\\ \ \\ } % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Date Performed: Oct 29, 2014\\ \ } % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+\section{Objective}
+To construct a magnitude- spectral class plot, better know as a Hertzsprung-Russel diagram, of the Pleiades Cluster.\\
+\section{Introduction}
+To begin to understand the behaviors, structure, and evolution of stars it first is important to create a classification system from which meaning can be derived from their various properties. This system must make use of of properties that are both observable, and relevant variables in our physical theories of stellar physics.\\
+
+The simplest of properties to observe is the luminosity of a star. If the distance to the star is known then the luminosity observed can be easily converted into an absolute magnitude for the star. For this experiment the problem of distance will be avoided by choosing observing targets from the Pleiades Cluster, which is a cluster of stars that are all approximately the same distance away from us.\\
+
+Another property of stars which we can easily make use of is the spectral distribution of light emitted by the star. Colour can be defined as the magnitude difference of luminosity at two set values of wavelength. This provides a simple way to compare the spectral light curve of different stars in wavelength space. It is now known that stars can be approximated by blackbody curves. This allows the temperature of a star to be approximated using colour. The colour can be fitted to a blackbody curve which is unique to some temperature. Furthermore, if high resolution spectra is available emission and absorption lines of various elements can be resolved which can tell us about the relative abundance of these elements, and even the velocity of the star by means of wavelength shift. Emission and absorbtion lines will be the property which we will make use of in this experiment.\\
+
+In 1817 Joseph Fraungofer discover lines crossing the solar spectrum$^2$. He realized that these lines could be used as a standard wavelength calibration method. Later, several scientists noticed that one of Fraunhofer's lines observed in the solar spectrum was the same line that is emitted by a sodium vapour lamp. Thus it was speculated that the sun could have a presence of sodium within in. This was the beginning of spectrum analysis which has gone on to become an absolutely fundamental method for astrophysics.\\
+
+The first comprehensive attempt at spectral classification was called the Henry Draper Catalogue which contained nearly 400,000 stellar spectra$^2$. At the time it was believed that stars should be grouped by the strength of their hydrogen spectral lines. Unfortunately it was quickly realized that the strength of the hydrogen lines did not correspond to increasing temperature which was the intended classification scheme. The classification system was then revised to match the order in which temperature increases. This is the reason for the odd ordering of the now famous classification sequence OBAFGKM. Modern observation capabilities has allowed this sequence to be further refined with a 0-9 numbering system that follows the stars letter classification. The number essentially represents how close a star is from one letter classification to the next in the sequence.\\
+
+This classification system has lead to the now widely used Hertzsprung Russell diagrams where stars are plotted in luminosity vs stellar classification. These diagrams have proven to be extremely useful for studying the evolution of stellar populations.
+\section{Procedure}
+Open the program ''Stellar Spectra.'' \\
+
+Select File then Login and fill in the required fields. \\
+
+Select File then Run, then Take Spectra.\\
+
+Click Dome then Tracking.\\
+
+Set the coordinates to the Pleiades cluster which is located at an RA of 3h, 43m, 0s and a Dec of 24$^\circ$, 17', 0''. \\
+
+Set the Slew Rate to 16.\\
+
+Create a table to track the object name, it's apparent V-band magnitude V, the star's classification as determined by the flow chart in the lab manual, the star's classification by comparison to other stars, the absolute V-band magnitude $M_v$, the distance modulus $\mu$=V-$M_V$, and the distance D.\\
+
+Open a table with the main spectral lines listed by clicking File then Run then Classify Spectra then File and finally Spectral Line Table.\\
+
+Position the on-screen box over a star by using the N,W,S,E buttons.\\
+
+Click Change View and the center the slit over the star.\\
+
+Ensure that the star is really a star by making sure the Object field starts with ''HD''.\\
+
+Click Take Reading then Start/Resume Count. Click Stop Count once the signal to noise ration has exceeded 100.\\
+
+Click Save and name the file as the last three digits of the stars name.\\
+
+Record the object's name and apparent V-band magnitude V on your table.\\
+
+Classify the star based on the chart in Figure 6.1 of the lab manual. Use the line and spectra type described in the lab manual to locate the star on the flow chart. Record the classification on your table.\\
+
+Click Change View and repeat Steps 9 to 15 for at least 20 stars.\\
+
+Then stars can now be classified by comparing them to other previously classified stars. To do this click File then Run then Classify Spectra. Next click File then Unknown Spectrum then Saved Spectra and select the first spectrum you saved.\\
+
+Click File and Atlas of Standard Spectra then Main Sequence. Use the Up and Down buttons to scroll through the standard spectra and compare your stars spectrum. The bottom panel will show the residual when the two spectrum are subtracted. Cycle through the standard spectra until you find the one with the smallest residual. Note which spectra gives this result on your table and repeat this for all 20 of your stars.\\
+
+Use Table 6.2 in the lab manual to estimate the absolute magnitudes of your stars. Choose the spectral type that best matches your star and record the absolute magnitude for each star on your table.\\
+
+Calculate the distance modulus $\mu$=V-$M_V$ for each star and records the value in your table. To obtain the distance in parsec use the formula:\\
+
+D=10$^{0.2\mu+1}$\\
+
+Record the distance on your table.\\
+
+Finally create an H-R diagram by plotting the apparent magnitude versus spectral class for all of your stars with the spectral class arranged by temperature (OBAFGKM).
+\section{Data and Calculations}
+See attached Data Table and derived H-R diagram.
+\section{Discussion}
+All results were as expected and consistent with know values. The H-R diagram created follows the trend of the main sequence and features some outliers in the giant branch. No white dwarfs were found, but this is not a surprise for such a small sample size. The distance to the Pleiades was determined to be (138.37$\pm$13.94)pc which is consistent with the known value$^1$ of (136.2$\pm$1.2)pc.
+\subsection{Questions}
+1) H-R diagram.\\
+The derived H-R diagram from this experiment does appear to form the main sequence. Although the sample size is small there is certainly a trend that matched the main sequence. There are a few stars which deviate from the main sequence which all appear to be somewhere along the giant branch. Although it is certainly possible to see white dwarfs as well it is no surprise that they could be absent with such a small sample size.
+
+2) The use of apparent magnitude instead of absolute magnitude is acceptable in this case because the stars are all members of the Pleiades Cluster and as such are all approximately the same distance away from us. There is still an error introduced by this, but it is nowhere near as significant than if the stars were say sampled randomly from the Galaxy causing distances to vary wildly. When the observed targets all come from the same local region of space the apparent magnitude become directly proportional to the absolute magnitude adjusted by some common offset for all stars in the cluster.\\
+
+3) Consulting Table 6.2 in the lab manual tells us that a G2 dwarf as an absolute magnitude of approximately 4.7. Using the distance modulus the sun at 4.7 absolute would have an apparent magnitude of 10.4 if it existed 138.37 parsecs away (The mean distance to the Pleiades Cluster derived from this experiment.) The human eye has a magnitude limit of approximately 7, so unfortunately the Sun would not be visible with the naked eye.\\
+
+4) The distance to the Pleiades was determined to be (138.37$\pm$13.94)pc which is consistent with the known value$^1$ of (136.2$\pm$1.2)pc.
+\section{References}
+1. Pleiades. (2014, December 2). In Wikipedia, The Free Encyclopedia. Retrieved 12:47, December 2, 2014, from http://en.wikipedia.org/w/index.php?title=Pleiades\&oldid=636326841\\
+2. Department of Physics and Astronomy, Astronomy 250 Lab Manual, pp. 45 to 53. (University of Victoria: Victoria, BC). July 2011.
+\end{document}

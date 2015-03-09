@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 3 \\ Stellar Observing with CCDs:
+Noise Regimes and Point Spread Functions \\ ASTR 329} % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Nov 26, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+
+\section{Objective}
+To study the properties of CCDs while under real observing conditions, and to answer the question ``how does the uncertainty in the measurement of the brightness of a star depend on the star brightness itself?''
+\section{Introduction}
+Photometric observations are a method for quantifying the information received from astronomical objects. The observed photon flux and approximate distance to the object can be used to determine it's luminosity, temperature, and size. This experiment will introduce the process photometric and noise analysis by performing it on ten stars in the open star cluster NGC 6819.\\
+
+Photon noise can be shown to be Poisson noise which is simply the square root of the signal. This is not the only source of error which must be taken into account for CCDs as this experiment will show. Scintillation noise is a time dependent error which arises from atmospheric turbulence. This turbulence can refract the incident photons which affects the number of photons received across the detector.\\
+
+Further correctors must be made to remove other sources of photons which do not originate from the object of interest. The Point Spread Function (PSF) of other nearby stars may overlap onto the observed object causing an increase in flux. Although stars are essentially point sources due to their distance we cannot resolve them as such due to physical limitations. This flux distribution we observe is called the PSF of the star. Furthermore the night time sky brightness must be corrected for as well.
+
+\section{Procedure}
+\subsection{Observations}
+Science, flat, and bias frames were taken of NGC 6819 using the 0.8m telescope in the Bob Wright Building Observatory.
+\section{Reductions and Discussion}
+\subsection{Bias Subtraction and Flat Fielding}
+All reduction and analysis were done using a Python script created using the imported modules SciPy, PyFits, PyRaf, and MatPlotLib. The bias frames were combined and averaged to create a master bias frame. This will be subtracted from all science and flat field frames. The median of the flat frames was then taken to create a master flat frame. The master bias was then subtracted from the science and master flat frames. Finally the science frame was divided by the master flat and re-normalized.
+\subsection{Aperture Photometry}
+The PyRaf $daophot$ function was then used on 10 stars selected from the data. $daophot$ performs aperture photometry which is the process of measuring all flux within a given radius about an objects center. An estimated value for the sky flux level must be subtracted as well. In order to find this a circular annulus around the object is used. A inner annulus radius of 40 was used with a width of 25. Multiple aperture sizes were attempted, and a size of 12 was deemed best after comparing the results of daophot across all science images. The standard deviation of the mean of the results was used to compare aperture sizes as well the the results of other students.\\
+
+Table 1. Shows the output from daophot aperture photometry. Sum represents the (object+sky) signal value, Flux is the object signal, and sky is the product of Msky and Area (Aperture scaling.)
+\begin{table}[h]
+\begin{tabular}{llllll}
+Table 1. & & & &\\
+Star Location & Sum(counts) & Msky(counts) & Area(pixels) & Flux(counts) & Sky(counts) \\
+\hline \\
+877, 1127 & 176220.43 & 1256.82 & 78.82 & 108543.94 & 99057.58 \\
+1005, 1201 & 106948.48 & 1152.3 & 72.24 & 43870.65 & 83241.83 \\
+1125, 996 & 735544.38 & 1257.02 & 78.77 & 666906.64 & 99016.1 \\
+633, 841 & 3468643.45 & 1256.89 & 78.82 & 3400404.64 & 99072.46 \\
+1294, 1144 & 246758.92 & 1257.04 & 78.78 & 178688.84 & 99028.25 \\
+1300, 1306 & 74570.83 & 1257.14 & 78.75 & 6417.72 & 99004 \\
+1230, 1300 & 232028.75 & 1256.98 & 78.78 & 163824.13 & 99025.05 \\
+791, 743 & 274999.65 & 1256.75 & 78.85 & 207812.83 & 99090.36 \\
+444, 1106 & 101644.13 & 1256.97 & 78.79 & 35256.69 & 99033.87 \\
+1574, 1457 & 296682.09 & 1256.81 & 78.81 & 228872.19 & 99048.16 
+\end{tabular}
+\end{table}
+\subsection{RMS Uncertainties}
+
+The RMS uncertainty is given by:\\
+
+$\sigma\ =\ \sqrt{\Sigma(x-\bar x)^2}$\\
+
+Both x and $\bar x$ values come from Table 1. where $\bar x$ is derived from the average of the values. The values for the Star and Sky signal RMS for each star were calculated in this manner. To calculate the object RMS the root of the squares of the (object+sky) RMS and sky RMS were calculated. This method may be used because the flux is calculated by combinations of the sky level and the (object+sky) combined level. A second value for the object RMS was calculated using the quadratic method to demonstrate consistency between the two methods. These results are tabulated in Table 2 below.
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+Table 2. & & & &\\
+Star Location & $\sigma _s$ & $\sigma _{os}$ & $\sigma _o$ & $\sigma _o$ (Quadratic Method) \\
+\hline \\
+877, 1127 & 11076.7550 & 224483.1687 & 360186.7656 & 360357.0460 \\
+1005, 1201 & 21283.3416 & 13176.5658 & 33149.1913 & 39393.5212 \\
+1125, 996 & 11296.3681 & 18299.1891 & 18333.5175 & 21534.2935 \\
+633, 841 & 10720.3297 & 74660.3379 & 69235.5070 & 70060.5517 \\
+1294, 1144 & 11516.3120 & 6306.2488 & 11472.6705 & 16255.6947 \\
+1300, 1306 & 11323.1760 & 598.1693 & 11492.7033 & 16133.7083 \\
+1230, 1300 & 11318.8446 & 5644.4250 & 11453.5205 & 16102.7754 \\
+791, 743 & 11142.5241 & 6337.9915 & 11662.2545 & 16129.6009 \\
+444, 1106 & 10468.0972 & 1537.5693 & 10315.4242 & 14696.5654 \\
+1574, 1457 & 11498.8916 & 5959.2318 & 11435.7548 & 16217.3054 
+\end{tabular}
+\end{table}
+
+\subsection{Plots of $\sigma$ vs log(s) for raw observations}
+Plots were created for raw observation RMS vs the logarithm of the corresponding signal.\\
+
+Photons obey Poisson statistics and thus they follow a relation of $\sigma \alpha \sqrt{S}$ in the region where Poisson noise is dominant.\\
+
+Figure 1 plots the Sky RMS uncertainty vs the log(Sky signal). It is dominated by a single data point. When this point is removed there appears to be an upward trend which is consistent with expectations, but not much confidence should be put on this result.\\
+
+Figure 2 plots the Object + Sky RMS uncertainty vs log(Object+Sky signal). Again a single point dominates and when it is removed an upwards trend is observed. This time the trend is much more clear and regimes can be identified. First the Poisson noise regime for lower signal levels, then as signal increase, the slope does as well. This is due to another noise component known as scintillation noise which will be discussed later in this report.\\
+
+The condition S = ft may be violated when there is strong turbulence or short exposure times. If strong turbulence is present the incoming flux would not be constant due to changes in the refractive index of the atmosphere. For short exposure times the random nature of the incident photons would be too great to guarantee any kind of definite relation.
+
+\subsection{Relations Between Signal and Noise}
+Figure 3 plots the Log(Object RMS Noise) vs Log(Object Signal). This log-log plot is used to identify the power relation between N and S. With the exception of two data points a clear linear relation is observed between the two. The slope is greater than 0.5 which is what one would expect for Poisson statistics so clearly there are more noise components. This may be accounted for by scintillation noise. Figure 3 also arguably demonstrates the greater effect of scintillation noise as signal increases. The slope appears to increase slightly at higher signal compared to lower signal. There are not enough data points to make this point with too much confidence however.\\
+
+Figure 4 plots the Log(Object Signal to Noise Ratio) vs Log(Object Signal). With the exception of two data points this plot shows a flattening slope at higher signal levels. This is due to the effects of scintillation. N becomes more closely related to S as scintillation noise becomes more dominant at higher signal levels. Thus the curve flattens out as signal increases.
+
+\subsection{Sky Brightness}
+The stars with ID's 13, 26, 91 correspond to the locations (791, 743), (1300,1306), (1294, 1144) respectively. These stars have had there magnitudes previously identified and listed in the lab manual$^1$. The sky brightness may be determined using these values and following equation:\\
+
+$M_{sky}=M_{star}-2.5log(\frac{Star\ counts}{Sky\ counts}-2.5log(\frac{(1'')^2}{(0.436'')^2}))$\\
+for the 2048x2048CCD and:\\
+
+$M_{sky}=M_{star}-2.5log(\frac{Star\ counts}{Sky\ counts}-2.5log(\frac{(1'')^2}{(0.869'')^2}))$\\
+for the 0.5m telescope CCD.\\
+
+\subsection{Scintillation Noise}
+Scintillation noise comes from the perturbations in the refractive index of the atmosphere along the path between the source and the detector. These perturbations cause the light to travel along different paths through the atmosphere. The effects of scintillation noise are shown in Figure 4 where, as signal increases, the signal to noise ratio stars relatively constant with a slope less than 0.5. Because of this slope we can conclude that the noise is increasing faster than just Poisson noise. The other component to this is the scintillation noise.\\
+
+For fainter stars scintillation is not observed because, as shown in Figure 4, Poisson noise dominates for lower signal levels. Less signal corresponds to few perturbations and thus less scintillation effects.\\
+In non-photometric conditions the atmospheric extinction becomes a function of the air mass between the source and the detector. Thus their effects could appear as fluctuations in the signal in a similar manner to scintillation noise. Flat fielding attempts to remove the pixel to pixel variations intrinsic to each CCD. If these variations were unaccounted for the signal would fluctuate spatially in a non uniform way similar to scintillation noise. Especially if observations are taken over a long period of time. Therefor observations which do not flat field correct my appear to have scintillation noise.
+\subsection{Multiple Stars on a Single CCD Frame}
+The best way to approximate the PSF is by using the brightest stars in the frames because it will be the least affected by background noise. Therefore it is easiest to acquire a best fit for the PSF from these brighter sources. Once this PSF is subtracted from the frame fainter stars can then be revealed behind it. The less dominant the background noise the smaller the residual will be after PSF subtraction thus yielding the best results.
+\section{Conclusion}
+The effects of scintillation noise as signal increases was demonstrated. Brighter sources are dominated by scintillation which flattens out the S/N vs S relation. When multiple objects appear in the same frame it was explained that it is best to use the PSF of the brightest star as a basis for the fainter stars due to the lesser effects of background noise on it. This background noise becomes dominant for fainter stars so their PSF should not be used as a basis for others.\\
+
+Note: some aspects of this lab were not completed. I attempted to do my data analysis with PyRaf which seemed to mostly work, but I had many issues which I was not able to remedy in time. I should have used IRAF, but I thought this would be fun to try. As such I wouldn't put much confidence in any of the results from this experiment even though many of the results did agree with theory when certain data points were removed.
+\section{References}
+1. Stephenson Yang, Astr 329 Lab 3 Notes.
+\section{Figures}
+
+
+\begin{figure}
+\includegraphics[width=1.1\textwidth]{figure_1} % Include the image placeholder.png
+\caption{Sky RMS Uncertainty vs Log(Sky signal)}
+\end{figure}
+\begin{figure}
+\includegraphics[width=1.1\textwidth]{osrms} % Include the image placeholder.png
+\caption{Object+Sky RMS Uncertainty vs Log(Object+Sky signal)}
+\end{figure}
+\begin{figure}
+\includegraphics[width=1.1\textwidth]{n} % Include the image placeholder.png
+\caption{Log(Object RMS Noise) vs Log(Object Signal)}
+\end{figure}
+\begin{figure}
+\includegraphics[width=1.1\textwidth]{sn} % Include the image placeholder.png
+\caption{Log(Object Signal to Noise Ratio) vs Log(Object Signal)}
+\end{figure}
+\end{document}
+

@@ -1,0 +1,265 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 15 \\ Electric Field and Potential Mapping \\ PHYS 216} % Title
+
+\author{James \textsc{Hartwick}\\Partners: Arianna, Riley} % Author name
+
+\date{Sept 25, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & Sept (18, 25), 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+% SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+To study electric field and potential patterns by means of two-dimensional electrostatic configurations.
+
+%\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+
+%\subsection{Definitions}
+%\label{definitions}
+%\begin{description}
+%\item[Stoichiometry]
+%The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+%\item[Atomic mass]
+%The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+%\end{description} 
+%----------------------------------------------------------------------------------------
+% SECTION 2
+%----------------------------------------------------------------------------------------
+
+
+\section{Theory}
+\subsection{General Theory}
+Electric field lines can be graphically visualized in much the same way as other fields like the gravitational field. To do so we typically adhere to the certain conventions. First the electric lines of force are in the same direction as the electric field at any given point. Line density is proportional to the magnitude of the field. And finally the lines are continuous everywhere but their source/sink where there are normal to the surface (at least in electrostatics.)\\
+
+Equipotential lines represent contours in the field where a constant voltage potential can be found. These contours will always be orthogonal to the electric field lines.\\
+
+When studying electrostatics the use of a vacuum chamber would be ideal since in order to be truly electrostatic there must not be any current. Unfortunately this is not ideal for the frugal experimentalist, so instead resistive paper is used to minimize, but not eliminate, the current between two conductors. This weak current will provide means to measure the voltage potential between any point on the paper and the sink.\\
+
+This potential difference in simplest terms can be related to the electric field in the following manner.\\
+
+$E=-\frac{dV}{dS}$\\
+
+Where E is the electric field, dV is the potential difference, and dS is the perpendicular distance along the line of force.
+
+\subsection{Theory of Instrumentation}
+A tri-sensored probe is used to measure the potential difference between each sensor and a reference/ground. In this case the sink is used as the reference. The three sensors, arranged in a right triangle with known spacing (about 10mm), allow the software to determine the direction of the electric field based on the potential differences between each sensor. This is done by calculating the x and y components of the electric field. The direction and magnitude can then be found using trivial calculations.
+\section{Apparatus}
+\begin{tabular}{ll}
+Palus Electric Field Probe\\
+Personal Computer\\
+A/D System\\
+Various Conducting Paper Configurations\\
+D. C. Power Supply \\
+\end{tabular}
+
+\section{Diagram}
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\section{Procedure}
+\subsection{Study of Charge Induction by Means of a Random Survey}
+First connect the two conductors on the resistive paper to the positive and negative terminal of the power supply. Next attach the reference clip of the A/D unit to conductor that is attached to the negative terminal of the power supply. This will provide a reference/ground voltage to compare the probe measurements to. Zero the voltage on the power supply then turn it on. Adjust the voltage until it is $\ge$5V.\\
+
+Open the E-field program and select ''acquire data.'' Choose a probe orientation from the control panel and position the probe accordingly on the paper. To record a reading press Enter. Take readings such that you will be able to deduce the shape of the electric field. Finally enable vector scaling from the plotting options menu. \\
+\subsection{Equipotential Survey in a High-Field Region}
+Connect the other paper by same method as described previously. Change the configuration of the E-field program to match the new setup. Place the probe in region 2 as shown in your lab manual. Note the voltage potential in this location. Reposition the probe to another location where you believe the equipotential line will be. Adjust the location until the potential matches your original measurement. Repeat this until you are able to map out the equipotential line. Repeat process for two more equipotential lines. 
+
+\section{Experimental Data}
+\subsection{Part 1}
+\begin{tabular}{ll}
+Scale of graph 1.0 & 1mm (scale) = 1.87mm (paper)\\
+\end{tabular}\\
+
+Region 1\\
+\begin{tabular}{ll}
+$\Delta V$& (0.553$\pm0.2$)V\\
+$\Delta s$& (0.935$\pm0.187$)cm\\
+Electric field (experimental) & 0.403V/cm\\
+\end{tabular}\\
+
+Region 2\\
+\begin{tabular}{ll}
+$\Delta V$& (0.763$\pm0.3$)V\\
+$\Delta s$& (1.496$\pm0.187$)cm\\
+Electric field (experimental) & 0.385V/cm\\
+\end{tabular}\\\\
+
+Region 3\\
+\begin{tabular}{ll}
+$\Delta V$& (0.287$\pm0.2$)V\\
+$\Delta s$ & (0.561$\pm0.187$)cm\\
+Electric field (experimental) & 0.574V/cm\\
+\end{tabular}\\
+
+Region 4\\
+\begin{tabular}{ll}
+$\Delta V$& (0.257$\pm0.2$)V\\
+$\Delta s$ & (0.935$\pm0.187$)cm\\
+Electric field (experimental) &0.241V/cm\\
+\end{tabular}
+
+
+%----------------------------------------------------------------------------------------
+% SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Experimental Analysis}
+\subsection{Part 1}
+\subsubsection{Calculating the local electric field}
+$E=-\frac{\Delta V}{\Delta s}$\\
+
+\begin{tabular}{ll}
+Region 1 electric field&(0.591$\pm$0.375)V/cm\\
+Region 2 electric field&(0.510$\pm$0.210)V/cm\\
+Region 3 electric field&(0.512$\pm$0.396)V/cm\\
+Region 4 electric field&(0.275$\pm$0.221)V/cm\\
+\end{tabular}
+\subsubsection{Consistency Checks}
+$Region\ 1:\ |0.591-0.403| < 0.375\ consistant\\
+Region\ 2:\ |0.510-0.385| < 0.210\ consistant\\
+Region\ 3:\ |0.512-0.574| < 0.396\ consistant\\
+Region\ 4:\ |0.275-0.241| > 0.221\ consistant
+$
+\subsubsection{Questions}
+1. Yes it does. Since electrons are free to move in a conductor a polarization of the conductor will occur when it is placed inside an electric field. Thus this polarization will add it's own component to the electric field. Through superposition of this on top of the original field we can see why the observed electric field changes.\\
+
+2. A conductor in electrostatic equilibrium is exactly what it sounds like. The electrons are static and in equilibrium. And since they are free to move in a conductor they will be attracted/repelled by the different areas of the electric field they are in. This results in a polarization of the conductor (imbalance of charge) to compensate for the fact that it is inside a non-uniform electric field. \\
+
+3. (Challenge question) The very reason for the charge imbalance is the presence of a stronger electric field in certain areas. When considering the two components at work here (The source/sink, and the unbalanced charges of the conductor) only their sum results in the equipotential we observe. The reason the charge in the conductor moves in the first place is to find equilibrium. Once it is found, thus becoming an electrostatic problem, the net potential from the superposition of the two components is zero. We know this because it is static. If there was not an equipotential the charge in the conductor would not be in equilibrium and thus would react to find equilibrium.
+
+\subsection{Part 2}
+\subsubsection{Questions}
+1. Yes they are normal to the equipotential lines; as they should be.\\
+
+2. The electric field is strongest in region 2, the area directly in-between the two conductors.\\
+
+3. See Graph 2.1\\
+
+4. To minimize the current through your body you would want to minimize the voltage potential between your two feet. Thus you would want to place both feet on an equipotential line. It would be ideal to stand on one foot because the maximum potential difference you could experience would just be from the distance across your foot. However, the wet ground would likely be a better conductor than your shoe so you may not even notice anything. Also, if you have time rotate your feet as much as possible so that they form a straight line along the equipotential line thus minimizing the distance your body is touching along the electric field line (thus minimizing the voltage potential difference.)\\
+
+5. To escape the danger area you would want to walk along the equipotential line which you are currently standing on. Switching to a different equipotention line would be a very bad idea.\\
+6. You are safer the further away you are due to a inverse square relation in the electric field differential. At further distance the rate at which the electric field changes follows this inverse square relation when moving along the electric field lines. Thus it will be easier to stay exactly on the equipotential lines when you are at a greater distance from the source/sink. \\
+
+(Challenge question) An alternative design would to simply add more grounded conductors. If this is done such that there is symmetry (You would probably have to extend the design to 3 dimensions) Then you could increase the life span of your spark plug. Every time there is a spark a small part of the ground conductor will be worn away. Thus increasing the area where a spark can occur will increase the life time of the plug. A disadvantage of this configuration is that you do not know exactly where the spark will occur since it will most likely take the path of shorted distance. Over time the location of the spark will change as the ground conductors are worn away.
+
+
+
+%----------------------------------------------------------------------------------------
+% SECTION 4
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+% SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Discussion}
+All results were constant, but due to very large relative uncertainties not much meaning can be derived from these results. All uncertainties ranged from 40-80$\%$. There were two main causes for these uncertainties.\\
+
+First the measurement of $\Delta$s required fine measurement of the graph. Unfortunately rulers with millimeter precision were all that was available to do so. The distances measured we small enough that the width of the pencil markings must be taken into account as well which results in uncertainties of these measurements being of the order of 10-20$\%$. It would be advisable to use fine tipped pencils, calipers with finer measurement capabilities, and enlarged graphs to improve upon these assigned uncertainties in future attempts.\\
+
+Next there was a large standard deviation on the measured set of equipotential values. The effect of this could be reduced by choosing larger regions. The relative difference between $\Delta s$ and the standard deviation uncertainty would be reduced significantly by doing so. Another improvement would be to add a finer set of grid lines on the conducting paper. This would allow easier calibration between the software and physical placement of the probe. With this would come greater flexibility in the placement of the probe yielding better results.\\
+
+\subsubsection{Graphs}
+Graph 1.1: Estimated locations of electric field and equipotental lines are plotted here. Circled regions indicate the regions where the electric field has been calculated for Part 1. Some measurements are included, but for a more detail view the Experimental Data Section 6.\\
+
+Graph 1.2: This is the same as Graph 1.1, but electric field vectors have been scaled to match their magnitudes. This Graph can be used to visualize the strength of the electric field.\\
+
+Graph 2.1: A new conductor configuration is feature here for Part 2 of this experiment. Equipotential lines have been found. The answers for questions 2.3 and 2.5 have been noted here as well.\\\\\\\\\\\\
+%----------------------------------------------------------------------------------------
+% SECTION 6
+%----------------------------------------------------------------------------------------
+\section{Conclusions}
+All results were deemed to be consistent.\\
+
+The electric field in the various regions were determined to be as follows.\\
+\begin{tabular}{ll}
+Region 1 electric field&(0.591$\pm$0.375)V/cm\\
+Region 2 electric field&(0.510$\pm$0.210)V/cm\\
+Region 3 electric field&(0.512$\pm$0.396)V/cm\\
+Region 4 electric field&(0.275$\pm$0.221)V/cm\\
+\end{tabular}
+
+\end{document}

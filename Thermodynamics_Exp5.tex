@@ -1,0 +1,299 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Experiment 5 \\ The Stirling Cycle \\ PHYS 217} % Title
+
+\author{James \textsc{Hartwick}\\ V00767675} % Author name
+
+
+\date{June 29, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & June 24, 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+% SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+To study the thermodynamic properties of the Stirling cycle; its application as a heat engine and as a refridgerator.
+
+%\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+
+%\subsection{Definitions}
+%\label{definitions}
+%\begin{description}
+%\item[Stoichiometry]
+%The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+%\item[Atomic mass]
+%The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+%\end{description} 
+%----------------------------------------------------------------------------------------
+% SECTION 2
+%----------------------------------------------------------------------------------------
+
+
+\section{Theory}
+The Stirling cycles is composed of an isothermal expansion, an isothermal compression, and two isochoric processes. This is similar to a carnot cycle but differs by its use of isothermal processes instead of adiabatic ones. The Stirling engine also features the presence of a regenerator that stores and releases thermal energy to help increase efficiency. The engine has two pistons which compress and expand the contained volume of gas. Meanwhile a fine metal mesh, called the regenerator, stores or releases thermal energy to and from the gas. First, the lower piston moves downwards to increase the volume inside the chamber. At the same time heat is added to the chamber by a metal coil (In this case powered by an electrical power source.) This combination attempts to enure the chamber remains at a constant temperature. Next both the upper and lower pistons are moved upwards at the same rate to maintain constant volume within the chamber while the heated gas is pushed out of the expansion chamber and transferred into the compression chamber through the regenerator. At this point the regenerator stores some thermal energy. The gas is then cooled by a water jacket wrapped around the compression chamber. While cooling the lower piston moves upward to reduce volume and maintain constant temperature. Next the two pistons both move back downwards maintaining constant volume. During this process the gas gains some heat when it is forced back through the regenerator and back into the expansion chamber. Finally the gas is heated again at constant volume by an electrical heat source until it reaches it's initial temperature and thus repeats the cycle again. This cycle is shown in the P-V graph below. This graph is an idealized case, and practical results will not perfectly mirror it.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{s} % Include the image placeholder.png
+\caption{P-V Diagram of the ideal Stirling cycle$^1$.}
+\end{center}
+\end{figure}
+
+The mechanical efficiency of the engine is given by the ratio of usable work produced by the engine to the input heat provided to run the engine. This can also be expressed as the ratio of usable output power to the input power. Thus:\\\\
+$\eta=\frac{P_{out}}{P_{in}}$\\
+
+For this experiment the input power is easily determined by the input Voltage and Current provided by the Power supply. This relating is give by the following.\\\\
+$P_{in}=\frac{dE}{dt}=\frac{dq}{dt}V=IV=I^2R$\\\\
+Where I is the current passing through the electric coil, and V is the voltage across the coil.\\\\
+To find the output power a braking force is applied to the engine. The mechanical output power using this method is described below.\\\\
+$P_{out}=\frac{dW}{dt}=Fv=F\omega r=(F_{2}-F_{1})2\pi r$\\\\
+Where F is the braking force needed to bring the engine near it's stalling point, f is the frequency at which the flywheel rotates, and r is the radius of the spindle attached to the flywheel to which we are apply the force/opposing torque.\\\\
+The thermodynamic work and power of the system are give by integrating the area under the curve of the P-V diagram given by 1 cycle of the engine.\\\\
+$Area_{under\ the\ curve}=W \implies P_{out,therm}=\frac{W}{T}$\\\\
+and $\eta_{therm}=\frac{P_{out,therm}}{P_{in}}$\\\\
+Where T is the period of time needed for the engine to complete one cycle.
+\section{Apparatus}
+\begin{tabular}{ll}
+Stirling Engine\\
+LabPro\\
+LoggerPro Software\\
+Vernier Pressure Sensor \\
+AC Ammeter\\
+Vernier AC power supply\\
+Step Down Transformer\\
+Slide-Wire Potentiometer\\
+DC Power Supply\\
+Vernier digital calipers\\
+\end{tabular}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\section{Diagram}
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\section{Procedure}
+P-V plots will be created for 5 runs of the Stirling engine's cycle. First the software needs to be set up to run the experiment. Turn on the DC power supply and set it to approximately 10V. Next set the experiment length in LoggerPro to -.2s with a sampling rate of 100 samples/s. To calibrate the equipment the voltage measured by the slide-wire potentiometer must be converted to volume. Manually rotate the flywheel, and set the maximum volume to 310$cm^3$ where the voltage is maximized when the lower piston is at the bottom of the chamber. Set the minimum volume to 155$cm^3$ where the voltage is minimized when the lower piston has moved as high as it can go.\\\\
+To start the engine first set the AC power supply to have a working voltage of 12-13V and a current of 12-13A. Turn on the water very slowly and ensure a slow stream of water is entering and exiting the tubing. Start the engine and let it run for 10 minutes before gathering any data.\\\\
+Collect 5 full cycles of data 1 at a time. Each run will have a corresponding P-V graph for the complete cycle. Adjust your experiment length if needed to ensure a full cycle is collected. Once the data is collected for the 5 runs integrate the curves to determine the thermodynamic work of the engine. Once the thermodynamic work is determined find the corresponding thermodynamic power and efficiency of the engine.\\\\
+Next the mechanic properties of the engine will be studied by applying a braking force to the engine; bringing it nearly to a stall. First change the experiment length to 30s with a sampling rate of 100 samples/s. Next wrap a braided copper band around the flywheel's spindle. Attach two spring scales to either end of the band and, with the help of a partner, pull each end of the scales until the tension nearly brings the engine to a stall. Note the readings on the scales at this point. Next measure the radius of the spindle using vernier digital calipers, and determine the period of each cycles when the engine was near it's stalling point. Use this data to find the mechanical output power and efficiency of the engine. 
+
+\section{Experimental Data}
+\subsection{Integrated Area Under P-V Curve}
+\begin{tabular}{ll}
+Run 1 & 2935 $cm^3kPa$\\
+Run 2 & 2613 $cm^3kPa$\\
+Run 3 & 2622 $cm^3kPa$\\
+Run 4 & 2666 $cm^3kPa$\\
+Run 5 & 2709 $cm^3kPa$\\
+Average & 2709 $cm^3kPa$\\
+Standard Deviation & 132 $cm^3kPa$\\
+Standard Error of the Mean & $\pm$ 59 $cm^3kPa$\\
+
+\end{tabular}
+\subsection{Data From Loaded Engine Experiment}
+\begin{tabular}{ll}
+Radius of Spindle & 12.53 $\pm$ \SI{0.005}{\mm}\\
+Input Voltage & 11.942 $\pm$ \SI{0.0005}{\V}\\
+Current & 11.9 $\pm$ \SI{0.05}{\A}\\
+First Spring Scale Value & 1950 $\pm$ \SI{50}{\g}\\
+Second Spring Scale Value& 1100 $\pm$ \SI{50}{\g}\\
+First Period Before Stall & 0.71 $\pm$ \SI{0.005}{\s}\\
+Second Period Before Stall & 0.75 $\pm$ \SI{0.005}{\s}\\
+Average Period Before Stall & 0.73 $\pm$ \SI{0.005}{\s}\\
+\end{tabular}
+\subsection{Experimental Setup \& Results}
+\begin{tabular}{ll}
+Period of Engine Cycle & 230 $\pm$ \SI{0.5}{\ms}\\
+Radius of Spindle & 12.53 $\pm$ \SI{0.005}{\mm}\\
+Input Voltage & 11.942 $\pm$ \SI{0.0005}{\V}\\
+Current & 11.9 $\pm$ \SI{0.05}{\A}\\
+First Spring Scale Value & 2000 $\pm$ \SI{100}{\g}\\
+Second Spring Scale Value& 1100 $\pm$ \SI{100}{\g}\\
+First Period Before Stall & 0.71 $\pm$ \SI{0.005}{\s}\\
+Second Period Before Stall & 0.75 $\pm$ \SI{0.005}{\s}\\
+Average Period Before Stall & 0.73 $\pm$ \SI{0.005}{\s}\\
+\end{tabular}
+\subsection{Example P-V Graph for Stirling Engine}
+See graph attached to the back.
+
+%----------------------------------------------------------------------------------------
+% SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\subsection{Determining Thermodynamic Work Done}
+
+$Area_{avg}=(2709\pm59) cm^3kPa=(2.709\pm0.059)m^3Pa=(2.709\pm0.059)J$\\
+$Area_{avg}=Work\implies W=(2.709\pm0.059)J$
+\subsection{Determining Thermodynamic Power Generated By Engine}
+$P_{out}=\frac{W}{T}=\frac{(2.709\pm0.059)J}{(230\pm0.1)(10^{-3})s}=(11.78\pm \sqrt{(0.059/2.709)^2+(0.1/230)^2}(11.78))W$\\
+$\implies P_{out}=(11.78\pm0.26)W$
+\subsection{Determining Power Input}
+$P_{in}=IV=((11.9\pm0.05)A)((11.942\pm0.0005)V)$\\
+$=(142.1\pm\sqrt{(0.05/11.9)^2+(0.0005/11.942)^2}(142.1))AV$\\
+$\implies P_{in}=(142.1\pm0.6)W$
+\subsection{Determining Thermodynamic Efficiency}
+$\eta=\frac{P_{out}}{P_{in}}=\frac{(11.78\pm0.26)W}{(142.1\pm0.6)W}(100\%)=(8.29\pm\sqrt{(0.6/141.2)^2+(0.26/11.78)^2}(8.29))\%$
+$\implies\eta=(8.29\pm0.186)\%$
+\subsection{Determining Tension Forces on Spring Scales}
+$F_{s1}=(2000\pm100)(g)(\frac{1kg}{1000g})(9.8\frac{m}{s^2})$\\
+$=(20\pm0.98)N$\\
+$F_{s2}=(1100\pm100)(g)(\frac{1kg}{1000g})(9.8\frac{m}{s^2})$\\
+$=(11\pm0.98)N$
+\subsection{Determining Average Frequency of the Flywheel}
+$T_{avg}=\frac{1}{f_{avg}}\implies f=\frac{1}{T_{avg}}=\frac{1}{(0.73\pm0.005)s}$\\
+$=(1.37\pm(\frac{0.005}{0.73})(1.37))Hz=(1.37\pm0.01)Hz$
+\subsection{Determining Mechanical Power Output}
+$P_{out,mech}=2\pi frF=2\pi fr(F_{s1}-F_{s2})$\\
+$=2\pi (1.37\pm0.01)Hz(12.53\pm0.005)mm(m/1000mm)((20\pm0.98)-(11\pm0.98))N$\\
+$=(0.97\pm\sqrt{(0.01/1.37)^2+(.005/12.53)^2+2(0.98/9)^2}(0.97))\frac{Nm}{s}$\\
+$P_{out,mech}=(0.97\pm0.15)W$
+\subsection{Determining Mechanical Efficiency}
+$\eta_{mech}=\frac{P_{out,mech}}{P_{in}}=\frac{(0.97\pm0.15)W}{(142.1\pm0.6)W}100\%$
+$=(0.683\pm\sqrt{(0.15/0.97)^2+(0.6/142.1)^2}(0.683))\%$\\
+$\implies\eta_{mech}=(0.683\pm0.106)\%$
+%----------------------------------------------------------------------------------------
+% SECTION 4
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+% SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Discussion}
+To study the Stirling cycle a Stirling Engine was monitored by both a pressure sensor and a slide-wire potentiometer to track the pressure and volume changes throughout the cycle at a rate of 100 samples/s. Voltage readings from the slide-wire potentiometer when the pistons were at the minimum, and maximum volume positions were used to calibrate the volume of the experiment. After calibration was complete 5 cycles of the engine were plotted in P-V space using LoggerPro.\\
+The resulting plots differed from the idealize Sterling Cycle plot (See Figure 1.) in a few ways. The isochoric processes before and after the isothermal expansion/compression processes appear to be nearly instant. This is due to the physical setup of our engine as it allows for a near instantaneous transfer from the compression chamber to the expansion chamber. During this transfer the gas should remain isochoric; it just happens very fast. However, this does mean one or both of the isothermal processes are not perfectly isothermal. If they were both perfectly isothermal, and the isochoric processes occured near instantaneously then the area under the curve would essentially be zero resulting in no useable work. All of this means that this machine does not represent and ideal Stirling cycle, but something similar instead.\\
+After the five P-V graphs were created the area under the curve was integrated to find the work done by the engine. From this the thermodynamic work, power and efficiency properties were determined resulting in the poor thermodynamic efficiency of 8.29\% which is much lower than an ideal Stirling cycle. This helps confirm earlier deductions of the P-V graph created by this engine. Other sources that may contribute to the inefficiency will come from the inherent friction of the process and perhaps thermal inefficiency from the regenerator. It is possible that the regenerator is not storing and releasing heat as well as it is intended to. The isochoric processes also occur very fast meaning that the regenerator does not have much time to transfer heat.\\
+The mechanical properties were determined next by adding a braking force to the engine using a copper band. Tension was applied to the band to bring the engine near it's stalling point, at which time it was measured to determine the mechanical work, and thus power/efficiency.\\
+A possible source of error for this experiment comes when calibrating the Voltage of the slide-wire potentiometer to the Volume of the chamber. It was difficult to determine the minimum and maximum positions of the pistons because they do not maintain the position for very long. Another source of error came from the integrated area under the P-V curves. In all runs there were small artifacts in the curve that clearly did not belong. No consistent pattern was seen other than their presence in different locations of the P-V cycles on all runs. This indicates either inconsistent data reporting from the sensors, or a small inherent problem within the engine causing oddities. The smoothest P-V graph was printed as an example, but even it features some small artifacts on the upper isothermal process and the low pressure isochoric process.
+%----------------------------------------------------------------------------------------
+% SECTION 6
+%----------------------------------------------------------------------------------------
+\section{Conclusions}
+The Stirling cycle was demonstrated by use of A Stirling Engine. P-V plots of the engine's cycle were studied over 5 runs in order to determine the following:\\\\
+Average thermodynamic work done by the Stirling Engine $=(2.709\pm0.059)$J\\
+Thermodynamic Power output of the Engine $=(11.78\pm0.26)W$\\
+Thermodynamic Efficiency of the Engine $(8.29\pm0.186)\%$\\\\
+A braking force was then applied to the Stirling Engine to determine:\\\\
+Mechanic Power Output = $(0.97\pm0.15)W$\\
+Mechanic Efficiency = $(0.683\pm0.106)\%$
+
+
+\section{Questions}
+\subsection{}
+See Sub-Section 7.1 for dimensional analysis demonstrating the conversion from $PV \implies cm^3kPA \implies J \implies work.$\\\\\\
+\subsection{}
+\ 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\section{References}
+1) Unknown, http://en.wikipedia.org/wiki/Stirling\_Cycle, Wikipedia: last modified 27 March 2014.
+\end{document}

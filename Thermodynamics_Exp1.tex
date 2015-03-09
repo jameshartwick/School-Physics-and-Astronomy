@@ -1,0 +1,277 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Experiment 1 \\ Ratio of Specific Heat Capacities \\ PHYS 217} % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{May 21, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & May 20, 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Objective}
+
+To determine the ratio of the specific heats of air, carbon dioxide, and argon. 
+
+%\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+
+%\subsection{Definitions}
+%\label{definitions}
+%\begin{description}
+%\item[Stoichiometry]
+%The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+%\item[Atomic mass]
+%The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+%\end{description} 
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+
+\section{Theory}
+In this experiment the ratio of specific heat at constant pressure, $C_P$ to the specific heat at constant volume, $C_V$ will be measured for several gases. This ratio, $\gamma$, depends upon the molecular configuration of the gas. This experiment attempts to measure $\gamma$ by observing the simple harmonic motion of a steel ball as it moves up and down in a tube separating the system within a jar and the atmosphere outside.
+
+A ball of mass m barely makes contact with the inner surface of a tube with cross-sectional area A. When the ball is released it drops and the thus the air in the jar gets compressed. Once the ball reaches it's equilibrium position the pressure in the jar $P_{eq}$ is given by the following where the atmospheric pressure is $P_0$.\\
+
+$P_{eq} = P_0+\frac{mg}{A}$\\
+
+Now if the ball is displaced from it's equilibrium position a force is exerted on the ball back towards equilibrium by the pressure difference from $P_{eq}$. This force is equal to the product of the pressure difference and the area upon which it is applied (A) leading the equation:\\
+
+$m\frac{d^2x}{dt^2}=-A\delta P$\\
+
+We assume the change in the system to be adiabatic, quasistatic, and reversible. Thus we can say that\\
+
+$\ln{P}+\gamma\ln{V}$ is constant.\\
+
+We want to isolate $\delta P$ from this equation to find it's contribution to the force equation above. Taking the derivative and isolating $\delta P$ yields\\
+
+$\delta P = -\frac{\gamma P \delta V}{V}$\\
+
+$\delta V$ is just simply the volume created between the displaced ball and it's equilibrium position or\\
+
+$\delta V = -Ax$\\
+
+Where x is the distance the ball is displaced from equilibrium. Plugging these equations into our force equation gives the equation of simple harmonic motion $m\frac{d^2x}{dt^2}= \frac{A^2\gamma P_{eq}x}{V}$ and corresponding period $T = 2\pi \sqrt{\frac{mV}{A^2 \gamma P_{eq}}}$\\
+
+Now $\gamma$ can be separated easily as\\
+
+$\gamma = \frac{64mV}{d^2P_{eq}T^2}$\\
+
+
+\section{Apparatus}
+\begin{tabular}{ll}
+10L Aspirator\\
+Precision Glass Tubing\\
+Steel Ball\\
+PC with Vernier Lab Pro Data acquisition system coupled with a pressure sensor\\
+$CO_2$ and Argon gas cylinder with filling tube \\\\\\\\\\\\\\\\\\\\\\\\\\
+\end{tabular}
+
+\section{Diagram}
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\section{Procedure}
+Use diagram above as reference. It is vital to ensure that the steel ball and the inside of the tube are clean both before starting and throughout the experiment. The equipment should be cleaned with methanol to ensure they are not contaminated by dust or other particles.\\ 
+The internal pressure of the Jar is monitored by the PC Logger Pro software while the ball completes it's oscillations. For best results the sampling rate should be set to be as high as possible. In this case we use 20 samples/second.\\
+The ball is placed at the top of the tube and a stopper is inserted to prevent the ball from dropping. Once the stopper is removed the ball drops and undergoes simple harmonic motion until it eventually stops at it's equilibrium position. The period of the oscillations is then used to find $\gamma$\\
+This process is then repeated with the jar filled with argon and carbon dioxide.
+
+\section{Experimental Data}
+
+\begin{tabular}{ll}
+Mass of steel ball & 16.5 $\pm$  \SI{0.05}{\gram}\\
+Diameter of steel ball & 16.00 $\pm$ \SI{0.005}{\mm}\\
+Cross sectional diameter A of steel ball/tube & 201.1 $\pm$ \SI{0.178}{\mm^2}\\
+Height of mercury & 760.6 $\pm$ \SI{0.05}{\mm}\\
+& =  101404.993 $\pm$ 6.66 pascals\\
+Period of oscillations (air) & 1.1164 $\pm$ \SI{0.05}{\s}\\
+Period of oscillations (arogon) & 1.0317 $\pm$ \SI{0.05}{\s}\\
+Period of oscillations (carbon dioxide) & 1.1453 $\pm$ \SI{0.05}{\s}\\
+Volume of Aspirator & 10.75L\\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Calculations}
+\subsection{Determining the equilibrium pressure}
+
+$P_{eq}=P_0+\frac{mg}{A}  \implies P_{eq}=101404.993Pa+\frac{(0.0165kg)(9.81m/s^2)}{0.000402123m^2} = 101807.519Pa$\\ 
+
+Uncertainties:\\
+$6.66Pa + \sqrt{(0.05/16.5)^2+(.178/402.1)^2}(\frac{mg}{A})Pa = 7.90Pa\\
+ \implies P_{eq} = 101807.519 \pm 7.90 Pa$
+
+\subsection{Determining Heat capacity ratio $\gamma$}
+
+$\gamma = \frac{64mV}{d^4P_{eq}T^2} \implies \gamma_{Air} = \frac{64(.0165kg)(0.01037m^3)}{(0.016m)^4(101807.519Pa)(1.1164s)} = 1.317$\\
+
+Uncertainties:\\
+$\sqrt{(0.05/16.5)^2+4(.005/16)^2+(7.9/101807)^2+2(0.05/1.1164)^2}\gamma_{Air} = \pm 0.08352$\\
+$\implies \gamma_{Air} = 1.317 \pm 0.08352$\\\\
+Similarily:\\
+$\gamma_{Argon} = 1.542 \pm 0.09036 $\\
+$\gamma_{CO_2} = 1.251 \pm 0.08141$\\
+
+Accepted values:\\
+$\gamma_{Air} = 1.400$\\
+$\gamma_{Argon} = 1.670$\\
+$\gamma_{CO_2} = 1.300$\\
+
+Consistency check:\\
+$\gamma_{Air} \implies 1.317 + 0.08352 = 1.40052 > 1.400 \therefore consistent$\\
+$\gamma_{Argon} \implies 1.542 + 0.09036 = 1.63236 < 1.670 \therefore inconsistent$\\
+$\gamma_{CO_2} \implies 1.251 + 0.08141 = 1.33241 > 1.300 \therefore consistent$\\
+
+\subsection{Verify Eqn 1.13 (from lab manual) is valid}
+$\frac{kT_1}{2} = \frac{\ln{A_n}-\ln{A_{n+i}}}{i} \implies k = \frac{2(\ln{A_n}-\ln{A_{n+i}})}{iT_1}$\\
+$A_n=0.52Pa$\\
+$A_{n+i}=0.22Pa$\\
+$i=3$\\
+$T_1 = 1.05s$\\
+$\implies k =  \frac{2(\ln{.52}-\ln{.22})}{3(1.05)} = 0.54616$\\
+
+Now verifying eq 1.13:\\
+$\frac{k^2T_1^2}{4}<<4\pi^2 \implies \frac{(.546)^2(1.05)^2}{4} = 0.0822 << 39.48 = 4\pi^2 $\\
+The assumption condition is true and no noticeable change in the period was observed so the assumption appears to be valid. 
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Discussion}
+The most obvious source of experimental uncertainty comes from the seal between the stopper, the tube, and the Aspirator. It was observed that their was a very slow leak. After achieving it's equilibrium position the steel ball would slowly drop indicating an imperfect seal. This means it is not a closed system as we would like since mass can be transferred to the surroundings. An imperfect seal would translate to a smaller force exerted on the ball to return it to the equilibrium position which in turn would increase the period. A longer period would decrease the value of $\gamma$ since T in in the denominator.\\
+This could be the reason why all the observed values of $\gamma$ are lower than their accepted values (even though two are still consistent.)
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+\section{Conclusions}
+The parameters of interest determined by this experiment are the specific heat ratios of Air, Argon, and Carbon Dioxide.\\
+$\gamma_{Air}$ was determined to be $1.317 \pm 0.08352$ which is consistent with accepted values.\\
+$\gamma_{Argon}$ was determined to be $1.542 \pm 0.09036 $ which is inconsistent with accepted values.\\
+$\gamma_{CO_2}$ was determined to be $1.251 \pm 0.08141$ which is consistent with accepted values.\\
+
+
+
+\section{Questions}
+In general the specific hear ratio of a molecule is related to the degrees of freedom (f) it has. For an ideal gas $\gamma \ \alpha \   \frac{f+2}{f}$ so for a monatomic gas with 3 degrees of freedom like Argon $\gamma = \frac{3+2}{3}$ = 1.67.
+For air we have 3 translational and two rotational degrees of freedom. Thus $\gamma = \frac{5+2}{5}$= 1.4. For real gases the degrees of freedom that become available increase with temperature. So different gases will have different numbers of degrees of freedom depending on their chemical make-up and temperatures resulting in the various values of $\gamma$ observed during this experiment.
+
+
+\end{document}

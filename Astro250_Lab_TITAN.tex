@@ -1,0 +1,84 @@
+
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Titan's Orbit \\ ASTR 250\\ \ \\ } % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Date Performed: Oct 15, 2014\\ \ } % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+\section{Objective}
+From observations of one of Saturn's Moons, Titan, we can plot the orbit and confirm Kepler's Second Law. Measurements of the radius and period of the orbit of the moon about the planet allow us to find the mass of Saturn
+\section{Introduction}
+Given a set of data points it is possible to find then orbit of an object by means of least-square ellipse fitting. The general equation of an ellipse is:\\
+
+$(\frac{x'-x'_C}{a})^2+(\frac{y'-y'_C}{b})^2-1=0$\\
+
+This equation is used to find the lease squared distance between possible parameter setups for the above equation and the observed data points.
+
+The origins of this technique date back to the early 1600's with Kepler's laws of planetary motion. These laws state that:\\
+
+1. Planets orbit the sun in an elipse centered at one of two foci.\\
+2. The line connecting the planet to the sun sweeps out equal angles over equal time.\\
+3. The square of the period is proportional to the cube of the semi-major axis.\\
+
+In the late 1600's Newton generalized these laws to include all astrophysical objects to create a set of universal laws of gravitation. This means that a planet, moon, star, asteroid, etc are all expected to behave in the same manner gravitationally. It was later discovered that these equations were incomplete due to the neglected affects of general relativity, but they still serve to provide good approximations in most cases.
+\section{Procedure}
+\subsection{Setting up the Observations for Viewing}
+Saturn and Titan were first observed over the course of several nights. After preprocessing was completed the images were examined by using the display library within IRAF to open them in DS9. The details of the display setup are listed on page 2 of the lab manual$^1$. Initially the image was overexposed in DS9. This was corrected by turning off the zscale parameter, and making further scaling adjustments with the mouse as necessary.
+\subsection{Measuring the Positions of Saturn and Titan}
+Now that DS9 was setup we wrote down the (x, y) coordinates of both Saturn and Titan in a text editor. We chose to use the format $X_{Titan},\ Y_{Titan},\ X_{Saturn},\ Y_{Saturn}$. This can be done in any editor such as vi or gedit. After writing down the positions from all images the results were saved as coo.dat. Next the position of Saturn was subtracted from both Saturn and Titan's coordinate values. This essentially makes Saturn the new zero point for the system. The terminal command:\\ 
+
+!awk `\{print \$1-\$3, \$2-\$4\}' coo.dat $>$ newcoo.dat \\
+
+was used to pipe this subtraction into the new file `newcoo.dat'.
+
+\subsection{Plotting the Orbit}
+With the coordinates normalized to Saturn’s position we could now determine the orbit of Titan. This was done using the bopgui program run from the terminal. This program was fed `newcoo.dat' was input to generate an orbit for Titan. It does this by performing least-squares analysis to fit an ellipse to the data set. Once the ellipse fitting was completed the results were outputted to a pdf and printed.
+\section{Data and Calculations}
+See attached Graph and Sample calculations sheet.
+\section{Discussion and Questions}
+\subsection{Shape of the Orbit}
+The orbit does not appear to be circular, but when uncertainties are accounted for the centre of the ellipse is within the allowable region for a circular orbit due to errors.
+\subsection{Inclination}
+The inclination was determined to be $(68.8\pm16.3)^\circ$, and the uncertainty on a and b was 29.8\%. This inclination will not be constant as the relative semi major and minor axis will change as Saturn orbits the sun with respect to the earth.
+\subsection{Period of Orbit}
+The location of Titan is approximately the same at day 1 and 15. This would mean an orbital period of 15 days. For a better approximation we could make use of Kepler’s 2nd law by integrating the area of the whole region enclosed by Titans orbit. The relative areas swept out by the difference between consecutive data points along with their time differences could then be used to calculated a much more accurate period. Furthermore this method could be improved by calculating the whole region swept out between points instead of just the triangle.
+\subsection{Calculating the mass of Saturn}
+The mass of Saturn was determined to be $6.557*10^{26}$kg. The largest uncertainty by far comes from the semi-major axis. This term in the equation used must have it's error added in quadrature 3 times due to it being a cubed term. This alone creates an uncertainty of approximately 51.6\%. To reduce this uncertainty more data points are needed.\\
+
+This technique should work on other moons, planets, stars because it follows the (mostly) universal laws of gravitation which are invariant in classical mechanics.
+
+\subsection{Conclusions}
+All results were deemed to be consistent within our uncertainties.\\
+
+The orbit of Titan was shown to be circular. The mass of Saturn was determined to be $6.557*10^{26}$kg $\pm$ 51.2\% which leaves the accepted value$^2$ of $5.68*10^{26}$kg well within reasonable bounds. The period of Titan was estimated to be 15 days which is consistent with the accepted value of 15.945 days$^3$.
+\section{References}
+1. Department of Physics and Astronomy, Titan's Orbit, pp. 1 to 9. (University of Victoria: Victoria, BC). July 2011.\\
+2. "Saturn." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 15 Dec. 2014. Web. 15 Dec. 2014. \\
+3. "Titan (moon)." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 14 Dec. 2014. Web. 15 Dec. 2014. \\
+\end{document}
+

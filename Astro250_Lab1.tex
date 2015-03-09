@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 1 \\ The Distance of the Hyades Star Cluster \\ ASTR 250} % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Sept 13, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Date Performed: & Sept 10, 2014 \\ % Date the experiment was performed
+\end{tabular}
+\end{center}
+
+\section{Objective}
+The moving cluster method is applied to determine the distance to the Hyades open star cluster.
+\section{Theory}
+Distance is one of the most fundamental properties used for the study of astrophysical objects. Astronomers have been searching for methods to determine this for centuries dating back all the way to the Greeks.
+\subsection{Annual Parallax}
+The first method for studying distance was introduced by Aristotle who correctly predicted that if we orbit around the sun we should be able to observe some annual parallax between nearby stars$^1$. The closer a star is to the earth the more it should appear to shift relative to further away background stars. Based on the angular displacement of stars over a period of 1 year it is a simple trigonometry problem to find the distance to the star if the distance to the sun is known. Unfortunately for Aristotle his instrumentation was not precise enough to observe this directly within his lifetime nor was the distance to the sun known. Today both of the issues have been resolved, and we are able to measure the distance to stars up to 100pc away from our sun$^1$.
+\subsection{Stellar Motion}
+One problem with measuring the displacement of nearby stars is that their absolute motion in space cannot be ignored. 
+\subsection{Radial Velocity}
+The proper motion of a star can be separated into two components. The transverse and radial velocity relative to the earth. The Radial Velocity can be measured by observing the doppler, or red/blue shift, of spectral lines. This is a more modern approach that was certainly beyond the means of Aristotle. This doppler shift is caused by the radial velocity component of the star. This effect is described by the equations of special relativity and can be simplified to the following.\\
+
+$\frac{v_r}{c}=\frac{\Delta\lambda}{\lambda}$
+\subsection{Transverse Velocity}
+The transverse velocity or proper motion can be accounted for by multiple observations over a number of years. With multiple observations it is possible to separate the annual parallax from the proper motion of stars. Unfortunately this method will give an angular velocity which is not much use if the distance is not already known. 
+\subsection{Moving Cluster Parallax}
+The above problem with finding transverse velocity can be countered by the use of nearby star clusters. Since we know that all the stars in these clusters will be approximately the same distance from us we can use the velocity vectors to determine a convergence point of the cluster as a whole. The distance using this method may be found using the following equation:\\
+
+$d(pc)=\frac{v_r tan\theta}{4.74\mu} $ Equation 1.3
+\section{Equipment}
+\begin{tabular}{ll}
+Plot of the Hyades star cluster\\
+Pencil\\
+Ruler\\
+\end{tabular}
+
+\section{Procedure}
+\subsection{Part 1}
+Use a ruler to extend the vectors of each star. Extend each vector far enough, about 25cm, to determine a convergence area. Once this area has been identified from noting the area where the lines are most dense note the coordinates and provide a reasonable area of uncertainty on it's position. 
+\subsection{Part 2}
+Determine the angle in projection to the convergence point for each of the 10 stars noted in the handout. Be sure to convert the distance scale on the handout into degrees before measuring.
+\subsection{Part 3}
+Refer to the lab manual for Equation (1.3) and the known values of radial velocities and proper motion for the 10 stars. Use these along with your measured angles to compute the distance to each of the 10 stars.
+\subsection{Part 4}
+Estimate the uncertainty in the distance for one of your stars due to uncertainties in the radial velocity, proper motion, and your convergence point.
+\subsection{Part 5}
+Find the average of the distances for the 10 stars and compute the standard deviation and the uncertainty in the mean.
+
+\section{Calculations}
+See attached calculations sheet.
+\section{Questions}
+\subsection{Questions From the Procedure}
+See attached calculations sheet for data table and numerical answers to all questions.\\
+
+Part 4: The uncertainty in the convergence point introduces the largest component to the uncertainty in distance. This is a random error where as the transverse and radial velocities will introduce uncertainties in a systematic manner.\\
+
+Part 5: 9 out of 10 distances are included within 1 standard deviation of the mean. For such a small sample size of only 10 this is not exactly disagreeable for a normal distribution. If you ignore this issue it does not follow a normal distribution. This does not follow a Gaussian (random) distribution either.
+\subsection{Additional Questions}
+1. The mean distance was $(30.82\pm4.45)$pc which corresponds to $(100.52\pm14.51)$ ly. This is inconsistent with the HIPPARCOS measurement of $(151\pm1)$ ly.\\
+
+2. The main assumption made with the method was that all the stars are the same distance away from the earth. This is certainly not the case as the Hyades cluster has a tidal radius of about 65 light years with as much as one third of the stars outside this boundary$^2$. In astronomical scales these stars all indeed all densely packed together but the ratio of their spacial distribution to the distance the are away from us introduces a massive unaccounted for uncertainty.\\
+
+3. The extent of the stars in the cluster is approximately 24x30 degrees. At a distance of 151ly this corresponds to a size of approximately 67x87ly. This is not particularly spherical.\\
+
+4. The convergence point corresponds to the convergence of the proper motion. So in projection the stars certainly could appear to converge here at some point. However they stars all have different velocities towards this point so there is no reason to believe the will, as a whole, all converge here at any point in time.\\
+
+5. Yes annual parallaxes should be a better method for this cluster because the ratio of absolute distance to the stars in cluster to the diameter of the cluster is much too large to provide reliable results.
+
+\section{References}
+1. Department of Physics and Astronomy, Titan's Orbit, pp. 1 to 9. (University of Victoria: Victoria, BC). July 2011.\\
+2. "Hyades (star cluster)." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 29 Jul. 2014. Web. 12 Dec. 2014. 
+\end{document}

@@ -1,0 +1,62 @@
+
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 11 \\ Star Counts \\ ASTR 250\\ \ \\ } % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Date Performed: Oct 13, 2014\\ \ } % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+\section{Objective}
+To determine the number of stars in the sky at each magnitude interval.
+\section{Introduction}
+To approximate the amount of stars enclosed in some given volume we may do so by making a few simplifications. If we assume a uniform distribution of stars of the same absolute magnitude in a region of space that has zero dust extinction we may express the number of stars N as the following:\\
+
+$logN=K+0.6m$ Equation 11.7\\
+
+Where K is a constant 0.6 represents the theoretical slope of a plot of logN as a function of magnitude. 
+\section{Equipment}
+Images obtained from the ST-8 camera.
+\section{Procedure}
+In IRAF the display library was used to open the image in DS9. Once loaded the colourmap was inverted and the image printed. 6-8 stars were then located which were easily identifiable. These stars were then labeled. Next the imexamine library was used to measure the brightness of the individual stars using the epar settings described in the lab manual$^1$. After executing imexamine the cursor was placed on each star identified earlier and the r key was pressed. After pressing r the FWHM was determined by the using the a key in the new window. After all the star's FWHM were measured the background noise was measured by pressing the m key while the cursor was placed over a blank patch of sky. This was done a few times and an average standard deviation was calculated.\\
+
+Next the datapars library in IRAF was setup as described in the lab manual$^1$. Next the findpars library was setup in a similar manner. Finally the daofind library was setup and run to find and calculate the magnitudes of the stars. daofind output these magnitudes into a fits file which was then used to generate a histogram.\\
+
+To create the histogram first the magnitudes were separated from the output file into a new file. Next the histogram library in IRAF was setup to match the settings in the lab manual$^1$ and to match the name of our magnitudes file. Finally gcur was used to get a hard copy of the plot.\\
+
+Next the slope was calculated by piping the binned magnitudes from histogram into a new file. AWK was then used to convert these to a logarithmic scale. After this was done the polyfit library in IRAF was setup to match the settings in the lab manual$^1$ before running it on the logarithmic magnitude file created previously. Poly output the intercept, slope, and corresponding uncertainties. 
+\section{Data and Calculations}
+See attached data page and graph.
+\section{Discussion}
+The slope was determined to be $0.496\pm0.017$ which leaves 0.6 outside the acceptable uncertainties. A lower value is to be expected for the following reasons. First dust is not accounted for in the 0.6 expectation value. Dust will reduce the magnitude and thus reduce the slope value. Secondly we assumed that all the stars are of the same magnitude when in reality there are far more fainter stars than bright one. This again skews the slope to a more downward trend. Thus our result is by no means unreasonable when we consider that we were using real data and equations matching idealized assumptions.
+
+\subsection{Bonus}
+If some process produces a graph with a slope of 0.6 that means that, for that process, the assumptions made were actualy true. This means that the process is not effected by dust, and all instances of the process have uniform magnitude. If the magnitude is known to be uniform the process may be used as a standard candle for distance using a simple inverse square relation of the flux to determine distance.
+\section{Conclusion}
+Although in most cases the assumptions made are highly inaccurate this method provides a means of identifying candidate processes for standard candles. If a process matches this idealized case it has a uniform magnitude which is a very useful thing.
+\section{References}
+1. Department of Physics and Astronomy, Astronomy 250 Lab Manual, pp. 96 to 107. (University of Victoria: Victoria, BC). July 2011.
+\end{document}

@@ -1,0 +1,211 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{amssymb}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Lab 2 \\ Properties of CCDs \\ ASTR 329} % Title
+
+\author{James \textsc{Hartwick}} % Author name
+
+\date{Oct 15, 2014} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+
+
+\section{Objective}
+To analyze the properties of CCD data and the errors associated with them.
+\section{Introduction}
+In order to make full use of CCD data the properties of the data they create must be well understood so that we can maximize the useful information that can be attained while understanding the limitations of the data due to errors. Some of these properties can improve observations such as the gain under the right circumstances. Others such as the dark current must be minimized to reduce systematic error as much as possible.\\
+
+The CCD itself is an array of photo detectors which can count incident photons at individual spacial locations along the focal plane. Each of these detectors corresponds to a pixel. The detectors are designed to release and trap electrons which are freed by the incoming photons. Each of these detectors have a saturation point where they can no longer hold any more charge. This can cause issues because if and pixels on the CCD become saturated the excess photons may spill over into adjacent pixels. There is a linear relation of counts vs exposure time until this saturation point is reached. At which point the counts flatten out to the constant saturation limit of the detector.\\
+
+CCDs are not 100\% efficient in their conversion of photons to counts. The percentage of incident photons that are detected and converted to free electrons is known as the quantum efficiency, and it is a function of the wavelength of the incident photons to the detector.\\
+
+When the exposure is complete the accumulated electric charge is converted into digital units (DU) which is amplified by the gain. During the conversion readout noise is introduced by the instrumentation. The readout noise may be corrected by reading data taken with zero exposure time. These are called bias frames and they represent the normalization or zero point correction needed that is intrinsic to the instrumentation.\\
+
+Another property which must be accounted for is the small thermal differentials across the detector which can also result in photo-emission, and thus false counts. This is know as dark current, and it must be accounted for. The temperature of the CCD is not constant so dark frames must be taken throughout the observation session. The spacial temperature distribution across the CCD will change throughout the night so dark frames taken at the beginning of the observing session may not be of any use for data taken at the end of the session.\\
+
+To calculated the noise of CCD data first we must account for Poisson noise. This may be expressed as:\\
+
+$N_p=\sqrt{S_{in}}=\sqrt{S_{du}g}$\\
+
+or when expressed in digital units:\\
+
+$N_{du}=\frac{N_p}{g}=\sqrt{\frac{S_{du}}{g}}$\\
+
+Next the readout noise may be expressed as:\\
+
+$N^2_r=(1+\frac{1}{M})n^2_r=(1+\frac{1}{M})(\frac{stddev_{\Delta bias}}{\sqrt{2}})^2$ Equation 1.0\\
+
+Then the total noise is given by:\\
+
+$N_T^2=N_r^2+N_{du}^2$\\
+
+At low signal $N_T$ is approximately equal to just $n_r$ and is constant. When the signal increases the photon noise becomes dominant so $N_T$ can be approximated by $N_{du}$.
+\section{Procedure}
+The Bob Write Center (UVic) 0.8m telescope and it's PIXIS 2048x2048 CCD was used to take nine bias frames, and fourteen flat fields. The bias frames were averaged then subtracted from the flat fields. The mean and standard deviation of a 20x20 pixel region was then calculated and tabulated in Table 1.0.\\
+
+Next the signal was plotted vs exposure time to demonstrate the linear relation it has, and the flattening out when the pixel becomes saturated as shown in Figure 1.0. Next, Figure 2.0, the noise was plotted against signal in logarithmic scale so that the noise may be analyzed to determine where different components are most dominant. The region where Poisson noise dominates, shown in figure 3.0, was then considered to calculate the gain using Equation 1.0. The readout noise was determined by the difference between bias and the master bias (averaged bias.) Next the saturation charge was calculated by comparing the gain to the maximum of the flat fields (Where the flat regime begins on Figure 1.0.)\\
+
+The pixel-to-pixel variations in the data were corrected next. The flat frames were divided by the 67s exposure flat (This was determined to be the first saturated frame) and renormalized. The logarithmic noise vs signal plot was then recreated (Figure 4.0) and the gain and readout noise were recalculated. The root mean square responsivity was then calculated by fitting the curve in Figure 5.0 to the total noise when flat field noise is taken into account in the following manner:\\
+
+$N_T^2=N_r^2+N_{du}^2+N_{FF}^2=N_r^2+N_{du}^2+(\alpha S)^2$ Equation 2.0\\
+
+Next the cosmetic quality of the CCD's output was qualitatively examined. The dark current was also cosmetically examined, and the number of dark current electrons per pixel was determined by using the $imstat$ IRAF function. The number of iterations where $imstat$ clips was adjusted to minimize the standard deviation of the mean. Next the area under the curve generated by the $imhist$ function was used to estimate the number of cosmic rays in each dark frame.
+
+Scripts were written using Python and it's modules Pyfits and Pyraf to assist in many of the above calculations, but this was entirely optional.
+\section{Data and Analysis}
+\subsection{Flat Field Data}
+Table 1.0: Values for the unreduced flat fields.\\
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Exposure[s] & Mean & Stddev & Min & Max \\
+\hline
+0.05 & 682.1 & 6.4 & 636 & 1296 \\
+0.1 & 713.2 & 7.5 & 635 & 1116 \\
+0.3 & 852.8 & 10.3 & 649 & 2901 \\
+0.6 & 1075 & 14.1 & 708 & 1470 \\
+1.25 & 1482 & 20.0 & 1099 & 1781 \\
+2.5 & 2277 & 31.0 & 1792 & 2770 \\
+5 & 4012 & 49.8 & 3154 & 4242 \\
+10 & 7374 & 83.9 & 5703 & 8900 \\
+20 & 14172 & 154.4 & 10757 & 15012 \\
+41 & 28158 & 462.2 & 21378 & 49026 \\
+67 & 44710 & 613.7 & 34202 & 53466 \\
+71 & 48498 & 532.2 & 36855 & 54623 \\
+85 & 50815 & 648.1 & 39907 & 54978 \\
+82 & 53936 & 1642 & 48468 & 56961 \\
+\hline
+\end{tabular}\\
+The 20x20 region was selected based upon its consistency, small standard deviation, and lack of dust rings/bad columns and pixels/cosmic rays.
+\subsection{Finding Saturation Charge Level}
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{Svt} % Include the image placeholder.png
+\caption{Signal S vs Exposure time.}
+\end{figure}
+The saturation level is determined by the end of the linear regime. In the eleventh flat frame the at 67 seconds exposure this regime ends and the CCD becomes saturated at 53466 counts. It is not of the form ($2^b$-1) which means that the CCD may not have been pegged at the saturation point. The detector appears to be very linear before the saturation point as one would expect. The limiting factor on determining linearity in this case is the lack of data points. More exposures would help increase confidence in the detector's linearity.
+
+\subsection{Logarithmic Noise vs Signal}
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{NvS2} % Include the image placeholder.png
+\caption{log(N) vs log(S)}
+\end{figure}
+There are two regimes present in this plot. The change between the two appears to occur at the 8th data point when the slop begins to increase as photon noise becomes more significant. A linear fit was applied to the Readout noise regime yielding a slope of 0.528 (Figure 3.0.)\\
+
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{NvS} % Include the image placeholder.png
+\caption{log(N) vs log(S) Readout Noise Regime}
+\end{figure}
+
+
+\subsection{Readout Noise Component}
+Number of bias frames M: 9 \\
+Standard deviation of $\Delta bias$, $\sqrt{2} \, n_R$: 1.99 \\
+Standard deviation of the master bias - bias, $\sqrt{2} \, n_r$: 0.425 \\
+
+The nine bias frames were averaged to create a master bias frame. The readout noise was then calculated by taking the difference of two bias frames and dividing by the square root of two. Then using the correction term of (1+/frac{1}{9})=1.111 we get:\\
+
+$n_r=1.111(\frac{1.99}{\sqrt{2}})=1.564$
+
+The rest of the selected region therefore yielded a gain of approximately 3 $e^-$/DU in the unsaturated frames. The gain appeared to increase with exposure time. The true value for the gain is best demonstrated in the 0.6s exposure time frame where photon noise has very little effect.\\
+
+Sample Calculation for the gain:\\
+
+$g = \frac{S_{du}}{N_T^2 - N_R^2} = \frac{425.9}{(12.11)^2-(1+\frac{_1}{^9})(\frac{1.99}{\sqrt{2}})^2} = 3.09$\\
+
+
+Poisson noise is the photon noise which is not measured in digital units. Thus the conversion to DU has its own noise associated to it and is represented by the readout noise. Therefore you cannot simply take the square root of the signal in DU to calculate the Poisson noise.
+
+\subsection{Flat Field Pixel to Pixel Variation Corrections}
+Due to pixel to pixel variations the curve in figure 2.0 changes from a $sqrt{S}$ relation at moderately high signal levels. This can be corrected by dividing the frames by the last unsaturated frame. The results are shown in Figure 4.0.\\
+
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{NvSred1} % Include the image placeholder.png
+\caption{log(N) vs log(S) Flat Field corrected}
+\end{figure}
+
+The resulting slope after correction has become much closer to a constant value as we would expect because it should remove the photon noise which is proportion to the signal. Therefore prior to correction photon noise became increasingly significant. Thus this correction should reduce the noise levels for higher signal flats.
+
+\subsection{Estimating the rms Responsivity}
+From the fit on Figure 5.0 and using Equation 2.0 the rms responsivity was determined to be $\alpha$=0.00011. Not too much confidence should be placed on this result due to the fit on figure 5.0 not agreeing too well with the data points.\\
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{NvSred2a} % Include the image placeholder.png
+\caption{rms Fit using Equation 2.0}
+\end{figure}
+
+\subsection{Cosmetic Quality and Dark Current}
+The region chosen is of good cosmetic quality. It was chosen to minimize dust rings, cosmic ray spikes, and bad rows/columns.\\
+When calculating the mean of the dark frames the number of clipping iterations was changed to help minimize the standard deviation of the mean. The dark current was then determined to be 2.64$e^-$/(pixel*minute) for the first dark frame, and 19.6$e^-$/(pixel*minute) for the second. The two dark frames were taken on different days so the lighting levels in the telescope dome may have changed which would explain the difference in intensity. Again the cosmetic quality of the dark frames was good by the same metric as described above. Furthermore the standard deviation of the dark frames was adequately low for both. The second, more intense frame, did have some minor structure to it which is likely caused by the a fore mentioned lighting differences. Cosmic rays are present in both, but this is unavoidable and to be expected.\\
+
+Calculating dark current:\\
+
+$S_{du} = \frac{39.61 \, DU}{30 \, min} (3 \, \, e^-/DU) = 2.64 \, \, e^-/min$\\
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Dark Frame & Mean [$e^-$/DU] & Standard Deviation & $e^-$/(pix*min) & Total cosmic ray spikes \\
+\hline
+First & 39.6 & 4.42 & 2.64 & 4521 \\
+Second & 169 & 9.05 & 19.6 & 7853 \\ 
+\hline
+\end{tabular}\\
+
+Cosmic rays have relatively high energy and saturate single pixels unlike stars which produce a Gaussian distribution of spacial intensity. Thus cosmic rays are easy to find qualitatively and easy to filter out. An estimation of the cosmic rays' luminosity function was created using the $imhist$ function in IRAF. The first frame was analyzed to have 4521 spikes, and the second had 7853 spikes for the entire 2048x2048 area of the CCD. These values were found by estimating the area under the curves of Figures 7.0 and 8.0. The area is in logarithmic scale, and the curve is not smooth so there are large uncertainty and little confidence in these values.
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{dark01lum} % Include the image placeholder.png
+\caption{Luminosity of the First Dark Frame}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{dark02lum} % Include the image placeholder.png
+\caption{Luminosity of the Second Dark Frame}
+\end{figure}
+\subsection{Observation of Faint Sources}
+Long exposure observations, or integrating mode, are used for faint sources instead of many stacked short exposure images. If many short exposure images were used they would have a much higher readout noise component because the total noise would be given by:
+
+$n_T^2=n_1^2+n_2^2+n_3^2+...$
+
+For very faint sources the noise will be much higher than the signal. When a very long exposure is taken the readout noise is only present once, and the relative signal to readout noise become much higher. Unfortunately longer exposures lead to more cosmic rays. Thus each source must be evaluated to find a the best ratio of exposure time to number of exposures to find the best balance of cosmic rays and readout noise. 
+
+\section{Conclusions}
+The properties of a CCD were observed and analyzed. The gain of the CCD was determined to be 3.09 $e^-$/DU which is consistent with the calibrated value of 3.04 $e^-$/DU known for the CCD used. The linear relation of photon noise to signal level was observed with a proportianality constant of 0.528 on a logarithmic plot of noise vs square root of signal. Dark frames were taken, and the variable nature of them was shown. Between 2.64 and 19.6 $e^-$/pixel*minute were observed on the dark frames.
+\end{document}
+
